@@ -98,13 +98,13 @@ const students = [
    Replace the example URL with a real YouTube URL.
    ------------------------------------------------ */
 
-const videos = [<iframe width="560" height="315" src="https://www.youtube.com/embed/DoBVa94v3pI?si=6fetI2_TlwOA_8tH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+const videos = [
     {
         id: 1,
         title: "Surah Recitation",
         category: "Surah Recitation",
         description: "Add your selected Surah recitation video here.",
-        url: "PASTE_YOUTUBE_URL_HERE"
+        url: "<iframe width="560" height="315" src="https://www.youtube.com/embed/DoBVa94v3pI?si=6fetI2_TlwOA_8tH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>"
     },
     {
         id: 2,
