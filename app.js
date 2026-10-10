@@ -104,7 +104,7 @@ const videos = [
         title: "Surah Recitation",
         category: "Surah Recitation",
         description: "Add your selected Surah recitation video here.",
-        url: "PASTE_YOUTUBE_URL_HERE"
+        url: "https://youtu.be/DoBVa94v3pI?si=0dkuDGzpNd8-9HUh"
     },
     {
         id: 2,
