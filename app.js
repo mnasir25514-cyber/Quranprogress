@@ -103,22 +103,22 @@ const videos = [
         id: 1,
         title: "Surah Recitation",
         category: "Surah Recitation",
-        description: "Add your selected Surah recitation video here.",
+        description: "surah feel recitation for the talafuz help",
         url: "https://youtu.be/DoBVa94v3pI?si=0dkuDGzpNd8-9HUh"
     },
     {
         id: 2,
         title: "Stories of the Sahabah (RA)",
         category: "Sahabah Stories",
-        description: "Add a teacher-selected story about the Sahabah (RA).",
-        url: "PASTE_YOUTUBE_URL_HERE"
+        description: "watch this and get ready for the quiz that can be held in the next week for nusaiba and mohammad",
+        url: "https://youtu.be/ZSLMniXcFuk?si=S3tlz9RJ_-kZ-kUc"
     },
     {
         id: 3,
         title: "Islamic Lessons for Students",
         category: "Islamic Lessons",
-        description: "Add an Islamic lesson for your students to watch.",
-        url: "PASTE_YOUTUBE_URL_HERE"
+        description: "must watch video",
+        url: "https://youtu.be/_NxLoGB0fXw?si=CfqqwuNxr8Twjv9e"
     }
 ];
 
