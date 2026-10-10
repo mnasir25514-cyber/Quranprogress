@@ -59,7 +59,7 @@ const students = [
         weeklyRating: 4,
         description: "Junior Quran reading progress",
         teacherReview: "Ibrahim is doing well. He is currently working on Surah Al-Lahab. With regular practice, his reading will continue to improve.",
-        weeklyComment: "Very good effort this week. Keep practicing the current Surah.",
+        weeklyComment: "Very good effort this week. Keep practicing the current Surah. and make sure he also read the surahs from home before the quran sessions",
         weeklyHistory: [
             { week: "This Week", rating: 4 },
             { week: "Previous Week", rating: 4 },
@@ -76,8 +76,8 @@ const students = [
         rating: 4,
         weeklyRating: 4,
         description: "Junior Noorani Qaida progress",
-        teacherReview: "Mustafa is making good progress in Noorani Qaida. He is currently on Takhti 13.",
-        weeklyComment: "Good progress this week. Keep practicing Takhti 13 carefully.",
+        teacherReview: "Mustafa is making good progress in Noorani Qaida. He is currently on Takhti 11.",
+        weeklyComment: "Good progress this week. Keep practicing Takhti 13 carefully. please make sure to make him read the lessons before the quran session time from home",
         weeklyHistory: [
             { week: "This Week", rating: 4 },
             { week: "Previous Week", rating: 4 },
