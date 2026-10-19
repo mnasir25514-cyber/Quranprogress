@@ -1,18 +1,21 @@
-
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
 
 :root {
-    --green: #174b3b;
-    --green-dark: #10392e;
-    --green-light: #eaf3ed;
+    --blue: #174b86;
+    --blue-dark: #10345e;
+    --blue-deep: #0c2748;
+    --blue-light: #eaf2fc;
+    --blue-pale: #f3f7fd;
     --gold: #c49a45;
     --gold-light: #f6edda;
     --cream: #faf9f4;
     --white: #ffffff;
-    --ink: #24352e;
-    --muted: #77847b;
-    --border: #e5e9e1;
-    --shadow: 0 14px 40px rgba(25, 58, 43, 0.07);
+    --ink: #24354a;
+    --muted: #778497;
+    --border: #e1e7ef;
+    --red: #c62828;
+    --red-light: #fff0f0;
+    --shadow: 0 14px 40px rgba(23, 55, 91, 0.09);
 }
 
 * {
@@ -32,11 +35,14 @@ body {
     line-height: 1.6;
 }
 
-button, input, a {
+button,
+input,
+a {
     font: inherit;
 }
 
-button, a {
+button,
+a {
     -webkit-tap-highlight-color: transparent;
 }
 
@@ -56,7 +62,7 @@ button {
     justify-content: space-between;
     align-items: center;
     gap: 20px;
-    background: rgba(255, 255, 255, 0.92);
+    background: rgba(255, 255, 255, 0.94);
     border-bottom: 1px solid var(--border);
 }
 
@@ -72,12 +78,13 @@ button {
     display: grid;
     place-items: center;
     color: var(--gold);
-    background: var(--green);
+    background: var(--blue);
     border-radius: 15px;
     font-size: 29px;
 }
 
-.brand strong, .brand small {
+.brand strong,
+.brand small {
     display: block;
 }
 
@@ -95,7 +102,8 @@ button {
     text-align: right;
 }
 
-.header-date span, .header-date strong {
+.header-date span,
+.header-date strong {
     display: block;
 }
 
@@ -114,6 +122,8 @@ button {
     margin: 0 auto;
 }
 
+/* WELCOME BANNER */
+
 .welcome-section {
     margin: 38px 0 64px;
     min-height: 340px;
@@ -122,7 +132,7 @@ button {
     grid-template-columns: 1.3fr 0.7fr;
     align-items: center;
     gap: 30px;
-    background: linear-gradient(120deg, #123e31, #1c5b45);
+    background: linear-gradient(120deg, var(--blue-dark), #2162a5);
     border-radius: 28px;
     overflow: hidden;
     color: white;
@@ -158,7 +168,7 @@ button {
 .welcome-copy p {
     max-width: 470px;
     margin: 0 0 24px;
-    color: #d4e3d9;
+    color: #dce8f7;
     font-size: 14px;
 }
 
@@ -167,7 +177,7 @@ button {
     gap: 20px;
     align-items: center;
     background: #e2c27c;
-    color: #193d2f;
+    color: #193d63;
     border-radius: 10px;
     padding: 12px 17px;
     font-size: 12px;
@@ -192,8 +202,9 @@ button {
     height: 205px;
     border: 1px solid rgba(232, 207, 151, 0.55);
     border-radius: 50%;
-    box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.025),
-                0 0 0 40px rgba(255, 255, 255, 0.025);
+    box-shadow:
+        0 0 0 20px rgba(255, 255, 255, 0.025),
+        0 0 0 40px rgba(255, 255, 255, 0.025);
 }
 
 .art-symbol {
@@ -206,10 +217,12 @@ button {
 .art-label {
     position: absolute;
     bottom: 0;
-    color: #dce8d9;
+    color: #dce8f7;
     font-size: 10px;
     letter-spacing: 1.5px;
 }
+
+/* SECTION HEADINGS */
 
 .section-heading {
     display: flex;
@@ -219,7 +232,8 @@ button {
     margin-bottom: 24px;
 }
 
-.section-heading h2, .panel-heading h3 {
+.section-heading h2,
+.panel-heading h3 {
     font-family: "Playfair Display", serif;
     letter-spacing: -0.4px;
 }
@@ -229,25 +243,29 @@ button {
     font-size: clamp(25px, 3vw, 31px);
 }
 
-.section-heading p, .panel-description {
+.section-heading p,
+.panel-description {
     margin: 5px 0 0;
     color: var(--muted);
     font-size: 13px;
 }
 
-.count-pill, .review-badge {
+.count-pill,
+.review-badge {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 5px;
     padding: 8px 12px;
     border-radius: 100px;
-    background: var(--green-light);
-    color: var(--green);
+    background: var(--blue-light);
+    color: var(--blue);
     font-size: 11px;
     font-weight: 700;
     white-space: nowrap;
 }
+
+/* STUDENT CARDS */
 
 .student-grid {
     display: grid;
@@ -262,25 +280,26 @@ button {
     border: 1px solid var(--border);
     border-radius: 18px;
     text-align: center;
-    cursor: pointer;
-    box-shadow: 0 4px 15px rgba(25, 58, 43, 0.025);
+    box-shadow: 0 4px 15px rgba(25, 58, 91, 0.03);
     transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
     animation: appear 0.45s both;
 }
 
-.student-card:hover, .student-card:focus-visible {
+.student-card:hover,
+.student-card:focus-visible {
     transform: translateY(-5px);
-    border-color: #c6d7c8;
+    border-color: #a9c6e8;
     box-shadow: var(--shadow);
     outline: none;
 }
 
-.student-avatar, .report-avatar {
+.student-avatar,
+.report-avatar {
     display: grid;
     place-items: center;
     border-radius: 50%;
-    background: var(--green-light);
-    color: var(--green);
+    background: var(--blue-light);
+    color: var(--blue);
     font-family: "Playfair Display", serif;
     font-size: 27px;
     font-weight: 700;
@@ -307,14 +326,46 @@ button {
     line-height: 1.4;
 }
 
+/* RED SURAH MEMORIZATION NOTICE */
+
+.student-warning {
+    display: flex;
+    align-items: flex-start;
+    gap: 7px;
+    margin: 0 0 13px;
+    padding: 10px;
+    border: 1px solid #f0baba;
+    border-radius: 10px;
+    background: var(--red-light);
+    color: var(--red);
+    text-align: left;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.warning-symbol {
+    display: grid;
+    place-items: center;
+    flex: 0 0 17px;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    background: var(--red);
+    color: white;
+    font-size: 11px;
+    line-height: 1;
+}
+
 .student-current {
     min-height: 68px;
     padding: 11px 5px;
-    background: #f8f8f3;
+    background: var(--blue-pale);
     border-radius: 10px;
 }
 
-.student-current span, .student-current strong {
+.student-current span,
+.student-current strong {
     display: block;
 }
 
@@ -325,17 +376,57 @@ button {
 
 .student-current strong {
     margin-top: 3px;
-    color: var(--green);
+    color: var(--blue);
     font-size: 12px;
     overflow-wrap: anywhere;
 }
 
 .student-rating {
     margin-top: 14px;
-    color: var(--gold);
-    letter-spacing: 2px;
-    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px;
 }
+
+.rating-value {
+    color: var(--ink);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0;
+    white-space: nowrap;
+}
+
+/* FULL, HALF AND EMPTY STARS */
+
+.star-icon {
+    display: inline-block;
+    font-size: 18px;
+    line-height: 1;
+    letter-spacing: 0;
+}
+
+.star-icon.is-full {
+    color: var(--gold);
+}
+
+.star-icon.is-empty {
+    color: #d5dce6;
+}
+
+.star-icon.is-half {
+    color: transparent;
+    background: linear-gradient(
+        90deg,
+        var(--gold) 50%,
+        #d5dce6 50%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+/* STUDENT REPORT */
 
 .report-section {
     display: none;
@@ -353,13 +444,13 @@ button {
     border: 1px solid var(--border);
     border-radius: 10px;
     background: white;
-    color: var(--green);
+    color: var(--blue);
     font-size: 12px;
     font-weight: 700;
 }
 
 .back-button:hover {
-    background: var(--green-light);
+    background: var(--blue-light);
 }
 
 .report-header {
@@ -405,7 +496,8 @@ button {
     border-radius: 12px;
 }
 
-.report-level span, .report-level strong {
+.report-level span,
+.report-level strong {
     display: block;
 }
 
@@ -440,7 +532,7 @@ button {
 }
 
 .next-card {
-    background: #f2f6ef;
+    background: var(--blue-pale);
 }
 
 .card-icon {
@@ -468,6 +560,14 @@ button {
     font-size: 12px;
 }
 
+.warning-detail {
+    padding: 9px 11px;
+    border-radius: 8px;
+    background: var(--red-light);
+    color: var(--red) !important;
+    font-weight: 700;
+}
+
 .report-panel {
     margin-top: 20px;
     padding: 25px;
@@ -492,6 +592,8 @@ button {
     font-size: 21px;
 }
 
+/* HIFZ PROGRESS */
+
 .surah-list {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -505,13 +607,13 @@ button {
     gap: 11px;
     padding: 12px;
     border-radius: 10px;
-    background: #f7f8f3;
+    background: var(--blue-pale);
     font-size: 12px;
 }
 
 .surah-item.completed .surah-number {
-    background: #dcecdf;
-    color: var(--green);
+    background: #dfebfa;
+    color: var(--blue);
 }
 
 .surah-item.current {
@@ -530,6 +632,8 @@ button {
     font-weight: 700;
 }
 
+/* JUNIOR WEEKLY REVIEWS */
+
 .weekly-summary {
     display: flex;
     align-items: center;
@@ -538,9 +642,9 @@ button {
 }
 
 .weekly-score {
-    color: var(--gold);
-    font-size: 25px;
-    letter-spacing: 2px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3px;
 }
 
 .weekly-summary strong {
@@ -557,21 +661,21 @@ button {
     height: 8px;
     margin: 17px 0 22px;
     border-radius: 100px;
-    background: #edf0e9;
+    background: #e8edf4;
     overflow: hidden;
 }
 
 .progress-fill {
     width: 0;
     height: 100%;
-    background: linear-gradient(90deg, #23634a, #c6a45b);
+    background: linear-gradient(90deg, #2368ad, #c6a45b);
     border-radius: inherit;
     transition: width 0.5s ease;
 }
 
 .comment-box {
     padding: 15px;
-    background: #f7f8f3;
+    background: var(--blue-pale);
     border-radius: 12px;
 }
 
@@ -599,6 +703,7 @@ button {
 .history-item {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     gap: 15px;
     padding: 11px 13px;
     border: 1px solid var(--border);
@@ -607,19 +712,22 @@ button {
 }
 
 .history-stars {
-    color: var(--gold);
-    letter-spacing: 1px;
+    display: flex;
+    gap: 2px;
 }
 
+/* TEACHER FEEDBACK */
+
 .review-stars {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px;
     margin-top: 19px;
-    color: var(--gold);
-    font-size: 26px;
-    letter-spacing: 3px;
 }
 
 .teacher-review {
-    color: #59665d;
+    color: #59677a;
     font-size: 13px;
     line-height: 1.8;
 }
@@ -630,6 +738,8 @@ button {
     color: var(--muted);
     font-size: 11px;
 }
+
+/* ISLAMIC VIDEO LIBRARY */
 
 .video-section {
     margin: 70px 0;
@@ -648,7 +758,7 @@ button {
     height: 52px;
     flex-shrink: 0;
     color: var(--gold);
-    background: var(--green);
+    background: var(--blue);
     border-radius: 16px;
     font-size: 18px;
 }
@@ -656,7 +766,7 @@ button {
 .featured-video {
     overflow: hidden;
     border-radius: 20px;
-    background: var(--green-dark);
+    background: var(--blue-dark);
     color: white;
     box-shadow: var(--shadow);
 }
@@ -667,8 +777,9 @@ button {
     gap: 22px;
     padding: 30px;
     min-height: 175px;
-    background: radial-gradient(circle at 85% 20%, #2a6850, transparent 40%),
-                linear-gradient(120deg, #10392e, #174b3b);
+    background:
+        radial-gradient(circle at 85% 20%, #2868a8, transparent 40%),
+        linear-gradient(120deg, var(--blue-dark), var(--blue));
 }
 
 .featured-play {
@@ -695,7 +806,7 @@ button {
 
 .featured-placeholder p {
     margin: 5px 0 0;
-    color: #d2e1d5;
+    color: #dce8f7;
     font-size: 12px;
 }
 
@@ -703,7 +814,7 @@ button {
     position: relative;
     width: 100%;
     aspect-ratio: 16 / 9;
-    background: #071d16;
+    background: #071d33;
 }
 
 .video-player iframe {
@@ -759,16 +870,17 @@ button {
 .category-button {
     padding: 9px 13px;
     background: white;
-    color: #647168;
+    color: #64748b;
     border: 1px solid var(--border);
     border-radius: 100px;
     font-size: 11px;
     transition: 0.2s;
 }
 
-.category-button:hover, .category-button.active {
-    background: var(--green);
-    border-color: var(--green);
+.category-button:hover,
+.category-button.active {
+    background: var(--blue);
+    border-color: var(--blue);
     color: white;
 }
 
@@ -806,11 +918,12 @@ button {
     padding: 15px;
     overflow: hidden;
     text-align: center;
-    background: linear-gradient(135deg, #143e31, #28664b);
+    background: linear-gradient(135deg, var(--blue-dark), #2867a7);
     color: #f0d79c;
 }
 
-.video-thumbnail::before, .video-thumbnail::after {
+.video-thumbnail::before,
+.video-thumbnail::after {
     content: "۞";
     position: absolute;
     color: rgba(240, 215, 156, 0.15);
@@ -837,7 +950,7 @@ button {
     margin: auto;
     border: 1px solid rgba(240, 215, 156, 0.65);
     border-radius: 50%;
-    background: rgba(10, 42, 30, 0.4);
+    background: rgba(10, 42, 70, 0.4);
     font-size: 14px;
 }
 
@@ -880,8 +993,8 @@ button {
 }
 
 .video-category-tag {
-    color: var(--green);
-    background: var(--green-light);
+    color: var(--blue);
+    background: var(--blue-light);
     padding: 5px 8px;
     border-radius: 7px;
     font-size: 9px;
@@ -893,13 +1006,13 @@ button {
     border-radius: 8px;
     padding: 8px 11px;
     color: white;
-    background: var(--green);
+    background: var(--blue);
     font-size: 10px;
     font-weight: 700;
 }
 
 .watch-button:hover {
-    background: var(--green-dark);
+    background: var(--blue-dark);
 }
 
 .empty-message {
@@ -916,11 +1029,13 @@ button {
     line-height: 1.7;
 }
 
+/* FOOTER */
+
 .site-footer {
     margin-top: 70px;
     padding: 36px 20px;
     text-align: center;
-    background: #123e31;
+    background: var(--blue-dark);
     color: white;
 }
 
@@ -936,12 +1051,12 @@ button {
 
 .site-footer p {
     margin: 7px 0;
-    color: #d1e0d4;
+    color: #d1e0f0;
     font-size: 12px;
 }
 
 .site-footer small {
-    color: #a9c3b0;
+    color: #b3cbe4;
     font-size: 10px;
 }
 
@@ -949,16 +1064,21 @@ button {
     display: none !important;
 }
 
+/* ANIMATIONS */
+
 @keyframes appear {
     from {
         opacity: 0;
         transform: translateY(10px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
+
+/* TABLET */
 
 @media (max-width: 900px) {
     .student-grid {
@@ -978,10 +1098,16 @@ button {
     }
 }
 
+/* MOBILE */
+
 @media (max-width: 600px) {
     .site-header {
         min-height: 72px;
         padding: 13px 5%;
+    }
+
+    .brand {
+        gap: 9px;
     }
 
     .brand-icon {
@@ -1083,13 +1209,26 @@ button {
         font-size: 9px;
     }
 
+    .student-warning {
+        gap: 5px;
+        padding: 8px;
+        font-size: 9px;
+    }
+
     .student-current strong {
         font-size: 11px;
     }
 
+    .star-icon {
+        font-size: 15px;
+    }
+
     .student-rating {
-        font-size: 13px;
-        letter-spacing: 1px;
+        gap: 3px;
+    }
+
+    .rating-value {
+        font-size: 10px;
     }
 
     .report-header {
@@ -1138,8 +1277,12 @@ button {
         grid-template-columns: 1fr;
     }
 
-    .weekly-score {
-        font-size: 20px;
+    .weekly-summary {
+        gap: 10px;
+    }
+
+    .star-icon {
+        font-size: 17px;
     }
 
     .video-section {
@@ -1213,7 +1356,9 @@ button {
 }
 
 @media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
+    *,
+    *::before,
+    *::after {
         scroll-behavior: auto !important;
         animation-duration: 0.01ms !important;
         transition-duration: 0.01ms !important;
