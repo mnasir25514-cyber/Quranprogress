@@ -1,11 +1,8 @@
-
 /* =====================================================
    QURAN LEARNING WEBSITE
-   Student reports + Islamic YouTube Learning Library
-
-   EDIT YOUR VIDEOS IN THE videos ARRAY BELOW.
+   Student Reports + Islamic YouTube Learning Library
+   Edit your student details and video links in this file.
    ===================================================== */
-
 
 /* ---------------- STUDENT INFORMATION ---------------- */
 
@@ -14,12 +11,14 @@ const students = [
         id: "muhammad",
         name: "Muhammad",
         type: "Quran Student",
-        level: "28th Para",
+        level: "29th Para",
         current: "Surah Al-Feel",
         next: "Continue Surah Al-Feel",
-        rating: 5,
+        rating: 4.5,
         description: "Quran reading and Hifz progress",
-        teacherReview: "MashaAllah! Muhammad is making good progress with the Quran. Keep revising the learned Surahs regularly.",
+        notice: "Surah Al-Feel has not been memorized yet.",
+        teacherReview:
+            "MashaAllah! Muhammad is making good progress with the Quran. He is currently working on Surah Al-Feel. Regular revision and practice will help strengthen his memorization.",
         completedSurahs: [
             "Surah Al-Fatiha",
             "Surah An-Naas",
@@ -36,9 +35,11 @@ const students = [
         level: "16th Para",
         current: "Surah Al-Feel",
         next: "Continue Surah Al-Feel",
-        rating: 5,
+        rating: 3.5,
         description: "Quran reading and Hifz progress",
-        teacherReview: "MashaAllah! Nusaiba is progressing nicely with her Quran learning. Regular revision will help strengthen the Surahs already learned.",
+        notice: "Surah Al-Feel has not been memorized yet.",
+        teacherReview:
+            "Nusaiba is continuing her Quran learning and should keep practising Surah Al-Feel. Regular revision at home will help improve her confidence and strengthen memorization.",
         completedSurahs: [
             "Surah Al-Fatiha",
             "Surah An-Naas",
@@ -55,13 +56,15 @@ const students = [
         level: "Amma Para",
         current: "Surah Al-Lahab",
         next: "Continue Surah Al-Lahab",
-        rating: 4,
-        weeklyRating: 4,
+        rating: 5,
+        weeklyRating: 5,
         description: "Junior Quran reading progress",
-        teacherReview: "Ibrahim is doing well. He is currently working on Surah Al-Lahab. With regular practice, his reading will continue to improve.",
-        weeklyComment: "Very good effort this week. Keep practicing the current Surah. and make sure he also read the surahs from home before the quran sessions",
+        teacherReview:
+            "Ibrahim needs to improve his reading fluency and pronunciation. Please help him practise reading the Surahs at home before Quran sessions. Regular practice will help him read more confidently.",
+        weeklyComment:
+            "Needs improvement in reading. Please practise the current Surah at home before each Quran session, focusing on clear pronunciation and steady reading.",
         weeklyHistory: [
-            { week: "This Week", rating: 4 },
+            { week: "This Week", rating: 5 },
             { week: "Previous Week", rating: 4 },
             { week: "2 Weeks Ago", rating: 3 }
         ]
@@ -73,13 +76,15 @@ const students = [
         level: "Takhti 13",
         current: "Takhti 13",
         next: "Takhti 14",
-        rating: 4,
-        weeklyRating: 4,
+        rating: 5,
+        weeklyRating: 5,
         description: "Junior Noorani Qaida progress",
-        teacherReview: "Mustafa is making good progress in Noorani Qaida. He is currently on Takhti 11.",
-        weeklyComment: "Good progress this week. Keep practicing Takhti 13 carefully. please make sure to make him read the lessons before the quran session time from home",
+        teacherReview:
+            "Excellent progress, Mustafa! MashaAllah, he is doing very well in Noorani Qaida and has reached Takhti 13. Keep up the excellent effort and continue practising the lesson at home before each Quran session.",
+        weeklyComment:
+            "Excellent effort this week! Keep practising Takhti 13 carefully and read the lesson at home before the next Quran session.",
         weeklyHistory: [
-            { week: "This Week", rating: 4 },
+            { week: "This Week", rating: 5 },
             { week: "Previous Week", rating: 4 },
             { week: "2 Weeks Ago", rating: 3 }
         ]
@@ -87,37 +92,35 @@ const students = [
 ];
 
 
-/* ---------------- VIDEO LIBRARY ----------------
-   Add, edit, or remove video objects in this array.
+/* ---------------- YOUTUBE VIDEO LIBRARY ----------------
+   Edit these video entries whenever you want.
 
-   category must be one of:
+   Allowed categories:
    "Surah Recitation"
    "Sahabah Stories"
    "Islamic Lessons"
-
-   Replace the example URL with a real YouTube URL.
-   ------------------------------------------------ */
+   ------------------------------------------------------- */
 
 const videos = [
     {
         id: 1,
         title: "Surah Recitation",
         category: "Surah Recitation",
-        description: "surah feel recitation for the talafuz help",
+        description: "Surah Al-Feel recitation to help with pronunciation.",
         url: "https://youtu.be/DoBVa94v3pI?si=0dkuDGzpNd8-9HUh"
     },
     {
         id: 2,
         title: "Stories of the Sahabah (RA)",
         category: "Sahabah Stories",
-        description: "watch this and get ready for the quiz that can be held in the next week for nusaiba and mohammad",
+        description: "Watch this and prepare for the quiz that may be held next week for Nusaiba and Muhammad.",
         url: "https://youtu.be/ZSLMniXcFuk?si=S3tlz9RJ_-kZ-kUc"
     },
     {
         id: 3,
         title: "Islamic Lessons for Students",
         category: "Islamic Lessons",
-        description: "must watch video",
+        description: "A must-watch video.",
         url: "https://youtu.be/_NxLoGB0fXw?si=CfqqwuNxr8Twjv9e"
     }
 ];
@@ -172,26 +175,46 @@ const emptyVideos = document.getElementById("empty-videos");
 
 /* ---------------- GENERAL HELPERS ---------------- */
 
-function getStars(number) {
-    let result = "";
-
-    for (let i = 1; i <= 5; i++) {
-        result += i <= number ? "★" : "☆";
-    }
-
-    return result;
-}
-
 function getInitial(name) {
     return name.charAt(0).toUpperCase();
 }
 
+function formatRating(number) {
+    return Number.isInteger(number) ? String(number) : number.toFixed(1);
+}
+
 function getRatingText(number) {
-    if (number === 5) return "Excellent";
-    if (number === 4) return "Very Good";
-    if (number === 3) return "Good";
-    if (number === 2) return "Needs More Practice";
+    if (number >= 4.5) return "Excellent";
+    if (number >= 3.5) return "Very Good";
+    if (number >= 3) return "Good";
+    if (number >= 2) return "Needs More Practice";
     return "Needs Improvement";
+}
+
+/* Displays full, half, and empty stars correctly. */
+function getStarsMarkup(number) {
+    let markup = "";
+
+    for (let i = 1; i <= 5; i++) {
+        let starClass = "star-icon is-empty";
+
+        if (number >= i) {
+            starClass = "star-icon is-full";
+        } else if (number >= i - 0.5) {
+            starClass = "star-icon is-half";
+        }
+
+        markup +=
+            '<span class="' + starClass + '" aria-hidden="true">★</span>';
+    }
+
+    return markup;
+}
+
+function getStars(number) {
+    return "★".repeat(Math.floor(number)) +
+        (number % 1 ? "⯪" : "") +
+        "☆".repeat(5 - Math.ceil(number));
 }
 
 function setDate() {
@@ -211,10 +234,13 @@ function createStudentCards() {
 
     students.forEach(function(student, index) {
         const card = document.createElement("button");
-
         card.type = "button";
         card.className = "student-card";
         card.style.animationDelay = (index * 80) + "ms";
+        card.setAttribute(
+            "aria-label",
+            "Open " + student.name + "'s progress report"
+        );
 
         card.innerHTML =
             '<div class="student-avatar">' +
@@ -225,15 +251,42 @@ function createStudentCards() {
             '</h3>' +
             '<span class="student-type">' +
                 student.type +
-            '</span>' +
-            '<div class="student-current">' +
-                '<span>Currently</span>' +
-                '<strong>' + student.current + '</strong>' +
-            '</div>' +
-            '<div class="student-rating" aria-label="' +
-                student.rating + ' out of 5 stars">' +
-                getStars(student.rating) +
-            '</div>';
+            '</span>';
+
+        if (student.notice) {
+            const notice = document.createElement("span");
+            notice.className = "student-warning";
+
+            const symbol = document.createElement("span");
+            symbol.className = "warning-symbol";
+            symbol.setAttribute("aria-hidden", "true");
+            symbol.textContent = "!";
+
+            notice.appendChild(symbol);
+            notice.appendChild(document.createTextNode(student.notice));
+            card.appendChild(notice);
+        }
+
+        const current = document.createElement("div");
+        current.className = "student-current";
+        current.innerHTML = '<span>Currently</span><strong></strong>';
+        current.querySelector("strong").textContent = student.current;
+        card.appendChild(current);
+
+        const rating = document.createElement("div");
+        rating.className = "student-rating";
+        rating.setAttribute(
+            "aria-label",
+            formatRating(student.rating) + " out of 5 stars"
+        );
+
+        rating.innerHTML =
+            getStarsMarkup(student.rating) +
+            '<span class="rating-value">' +
+                formatRating(student.rating) + '/5' +
+            '</span>';
+
+        card.appendChild(rating);
 
         card.addEventListener("click", function() {
             showStudent(student);
@@ -262,27 +315,39 @@ function showStudent(student) {
     reportLevel.textContent = student.level;
 
     currentLearning.textContent = student.current;
-    currentDetail.textContent = "Currently learning and practicing this lesson.";
+
+    currentDetail.textContent =
+        student.id === "muhammad" || student.id === "nusaiba"
+            ? "Continue practising Surah Al-Feel before marking it as memorized."
+            : "Currently learning and practising this lesson.";
 
     nextLearning.textContent = student.next;
     nextDetail.textContent = "The next step in the learning journey.";
 
     teacherReview.textContent = student.teacherReview;
+
     lastUpdated.textContent = new Date().toLocaleDateString("en-GB", {
         day: "numeric",
         month: "long",
         year: "numeric"
     });
 
-    ratingStars.innerHTML = "";
+    ratingStars.innerHTML =
+        getStarsMarkup(student.rating) +
+        '<span class="rating-value">' +
+            formatRating(student.rating) + '/5' +
+        '</span>';
 
-    for (let i = 1; i <= 5; i++) {
-        const star = document.createElement("span");
+    ratingStars.setAttribute(
+        "aria-label",
+        formatRating(student.rating) + " out of 5 stars"
+    );
 
-        star.className = "star";
-        star.textContent = i <= student.rating ? "★" : "☆";
-
-        ratingStars.appendChild(star);
+    if (student.notice) {
+        currentDetail.classList.add("warning-detail");
+        currentDetail.textContent = student.notice;
+    } else {
+        currentDetail.classList.remove("warning-detail");
     }
 
     if (student.completedSurahs) {
@@ -294,45 +359,43 @@ function showStudent(student) {
     window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
+
 function showQuranProgress(student) {
     hifzSection.hidden = false;
     hifzSection.style.display = "block";
     weeklySection.hidden = true;
 
     surahList.innerHTML = "";
-    completionCount.textContent = student.completedSurahs.length + " completed";
+    completionCount.textContent =
+        student.completedSurahs.length + " completed";
 
     student.completedSurahs.forEach(function(surah) {
         const item = document.createElement("div");
-
         item.className = "surah-item completed";
-        item.innerHTML =
-            '<div class="surah-number">✓</div>' +
-            '<span></span>';
-
+        item.innerHTML = '<div class="surah-number">✓</div><span></span>';
         item.querySelector("span").textContent = surah;
         surahList.appendChild(item);
     });
 
     const current = document.createElement("div");
-
     current.className = "surah-item current";
-    current.innerHTML =
-        '<div class="surah-number">→</div>' +
-        '<span></span>';
+    current.innerHTML = '<div class="surah-number">→</div><span></span>';
+    current.querySelector("span").textContent =
+        student.current + " — not memorized yet";
 
-    current.querySelector("span").textContent = student.current;
     surahList.appendChild(current);
 }
 
+
 function showJuniorProgress(student) {
     hifzSection.hidden = true;
+    hifzSection.style.display = "none";
     weeklySection.hidden = false;
 
     const rating = student.weeklyRating;
 
-    weeklyScore.textContent = getStars(rating);
-    weeklyStarsNumber.textContent = rating;
+    weeklyScore.innerHTML = getStarsMarkup(rating);
+    weeklyStarsNumber.textContent = formatRating(rating);
     weeklyRating.textContent = getRatingText(rating);
     weeklyComment.textContent = student.weeklyComment;
     weeklyProgressFill.style.width = (rating * 20) + "%";
@@ -341,7 +404,6 @@ function showJuniorProgress(student) {
 
     student.weeklyHistory.forEach(function(item) {
         const history = document.createElement("div");
-
         history.className = "history-item";
 
         const week = document.createElement("span");
@@ -350,13 +412,18 @@ function showJuniorProgress(student) {
 
         const stars = document.createElement("span");
         stars.className = "history-stars";
-        stars.textContent = getStars(item.rating);
+        stars.innerHTML = getStarsMarkup(item.rating);
+        stars.setAttribute(
+            "aria-label",
+            item.rating + " out of 5 stars"
+        );
 
         history.appendChild(week);
         history.appendChild(stars);
         weeklyHistoryList.appendChild(history);
     });
 }
+
 
 function showStudentList() {
     reportSection.classList.remove("active");
@@ -389,23 +456,12 @@ let activeCategory = "All Videos";
 let activeVideoId = null;
 
 
-/*
-   Accepts common YouTube links:
-   youtube.com/watch?v=VIDEO_ID
-   youtu.be/VIDEO_ID
-   youtube.com/embed/VIDEO_ID
-   youtube.com/shorts/VIDEO_ID
-*/
-
 function getYouTubeId(url) {
-    if (!url || typeof url !== "string") {
-        return "";
-    }
+    if (!url || typeof url !== "string") return "";
 
     const trimmedUrl = url.trim();
 
-    if (!trimmedUrl ||
-        trimmedUrl === "PASTE_YOUTUBE_URL_HERE") {
+    if (!trimmedUrl || trimmedUrl === "PASTE_YOUTUBE_URL_HERE") {
         return "";
     }
 
@@ -414,8 +470,12 @@ function getYouTubeId(url) {
         const hostname = parsedUrl.hostname.toLowerCase();
         let videoId = "";
 
-        if (hostname === "youtu.be" || hostname.endsWith(".youtu.be")) {
-            videoId = parsedUrl.pathname.split("/").filter(Boolean)[0] || "";
+        if (
+            hostname === "youtu.be" ||
+            hostname.endsWith(".youtu.be")
+        ) {
+            videoId =
+                parsedUrl.pathname.split("/").filter(Boolean)[0] || "";
         } else if (
             hostname === "youtube.com" ||
             hostname.endsWith(".youtube.com") ||
@@ -425,7 +485,8 @@ function getYouTubeId(url) {
             if (parsedUrl.pathname === "/watch") {
                 videoId = parsedUrl.searchParams.get("v") || "";
             } else {
-                const parts = parsedUrl.pathname.split("/").filter(Boolean);
+                const parts =
+                    parsedUrl.pathname.split("/").filter(Boolean);
 
                 if (
                     parts.length >= 2 &&
@@ -436,11 +497,7 @@ function getYouTubeId(url) {
             }
         }
 
-        if (!/^[a-zA-Z0-9_-]{11}$/.test(videoId)) {
-            return "";
-        }
-
-        return videoId;
+        return /^[a-zA-Z0-9_-]{11}$/.test(videoId) ? videoId : "";
     } catch (error) {
         return "";
     }
@@ -452,7 +509,6 @@ function renderCategoryFilters() {
 
     videoCategories.forEach(function(category) {
         const button = document.createElement("button");
-
         button.type = "button";
         button.className = "category-button";
 
@@ -483,13 +539,13 @@ function renderVideos() {
             activeCategory === "All Videos" ||
             video.category === activeCategory;
 
-        const searchableText =
-            (video.title + " " + video.category + " " +
-            video.description).toLowerCase();
+        const searchableText = (
+            video.title + " " +
+            video.category + " " +
+            video.description
+        ).toLowerCase();
 
-        const matchesSearch = searchableText.includes(searchTerm);
-
-        return matchesCategory && matchesSearch;
+        return matchesCategory && searchableText.includes(searchTerm);
     });
 
     filteredVideos.forEach(function(video) {
@@ -502,6 +558,9 @@ function renderVideos() {
 
         const thumbnail = document.createElement("div");
         thumbnail.className = "video-thumbnail";
+        thumbnail.setAttribute("role", "button");
+        thumbnail.setAttribute("tabindex", "0");
+        thumbnail.setAttribute("aria-label", "Play " + video.title);
 
         const playIcon = document.createElement("span");
         playIcon.className = "thumbnail-icon";
@@ -543,11 +602,6 @@ function renderVideos() {
             playVideo(video);
         });
 
-        thumbnail.style.cursor = "pointer";
-        thumbnail.setAttribute("role", "button");
-        thumbnail.setAttribute("tabindex", "0");
-        thumbnail.setAttribute("aria-label", "Play " + video.title);
-
         thumbnail.addEventListener("keydown", function(event) {
             if (event.key === "Enter" || event.key === " ") {
                 event.preventDefault();
@@ -578,7 +632,8 @@ function playVideo(video) {
     if (!youtubeId) {
         featuredTitle.textContent = video.title;
         featuredDescription.textContent =
-            "This video needs a valid YouTube URL. Edit the videos list in app.js and add its link.";
+            "Please add a valid YouTube URL to this video in app.js.";
+
         featuredPlaceholder.hidden = false;
         videoPlayer.hidden = true;
         videoPlayer.innerHTML = "";
@@ -588,25 +643,23 @@ function playVideo(video) {
     activeVideoId = video.id;
 
     featuredTitle.textContent = video.title;
-    featuredDescription.textContent = video.category + " · Selected by your teacher";
+    featuredDescription.textContent =
+        video.category + " · Selected by your teacher";
 
     featuredPlaceholder.hidden = true;
     videoPlayer.hidden = false;
-
     videoPlayer.innerHTML = "";
 
     const iframe = document.createElement("iframe");
-
     iframe.src =
-        "https://www.youtube-nocookie.com/embed/" +
-        youtubeId +
-        "?rel=0";
+        "https://www.youtube-nocookie.com/embed/" + youtubeId + "?rel=0";
 
     iframe.title = video.title;
     iframe.allow =
         "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
     iframe.allowFullscreen = true;
     iframe.referrerPolicy = "strict-origin-when-cross-origin";
+    iframe.loading = "lazy";
 
     videoPlayer.appendChild(iframe);
 
