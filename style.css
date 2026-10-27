@@ -1,21 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
 
 :root {
-    --blue: #174b86;
-    --blue-dark: #10345e;
-    --blue-deep: #0c2748;
-    --blue-light: #eaf2fc;
-    --blue-pale: #f3f7fd;
+    --brown: #79502f;
+    --brown-dark: #56371f;
+    --brown-deep: #382313;
+    --brown-light: #f0e3d4;
+    --brown-pale: #faf3eb;
     --gold: #c49a45;
     --gold-light: #f6edda;
-    --cream: #faf9f4;
+    --cream: #f7f0e7;
     --white: #ffffff;
-    --ink: #24354a;
-    --muted: #778497;
-    --border: #e1e7ef;
-    --red: #c62828;
-    --red-light: #fff0f0;
-    --shadow: 0 14px 40px rgba(23, 55, 91, 0.09);
+    --ink: #32291f;
+    --muted: #817366;
+    --border: #e7ddd2;
+    --red: #b42332;
+    --red-dark: #8f1724;
+    --red-light: #fff0f1;
+    --shadow: 0 14px 40px rgba(87, 55, 31, 0.12);
 }
 
 * {
@@ -78,13 +79,15 @@ button {
     display: grid;
     place-items: center;
     color: var(--gold);
-    background: var(--blue);
+    background: var(--brown);
     border-radius: 15px;
     font-size: 29px;
 }
 
 .brand strong,
-.brand small {
+.brand small,
+.header-date span,
+.header-date strong {
     display: block;
 }
 
@@ -102,11 +105,6 @@ button {
     text-align: right;
 }
 
-.header-date span,
-.header-date strong {
-    display: block;
-}
-
 .header-date span {
     color: var(--muted);
     font-size: 11px;
@@ -122,8 +120,6 @@ button {
     margin: 0 auto;
 }
 
-/* WELCOME BANNER */
-
 .welcome-section {
     margin: 38px 0 64px;
     min-height: 340px;
@@ -132,11 +128,12 @@ button {
     grid-template-columns: 1.3fr 0.7fr;
     align-items: center;
     gap: 30px;
-    background: linear-gradient(120deg, var(--blue-dark), #2162a5);
+    background: linear-gradient(120deg, #4a2d18, #79502f);
     border-radius: 28px;
     overflow: hidden;
     color: white;
     position: relative;
+    box-shadow: 0 16px 38px rgba(74, 45, 24, 0.18);
 }
 
 .welcome-copy {
@@ -168,7 +165,7 @@ button {
 .welcome-copy p {
     max-width: 470px;
     margin: 0 0 24px;
-    color: #dce8f7;
+    color: #f1e4d6;
     font-size: 14px;
 }
 
@@ -177,7 +174,7 @@ button {
     gap: 20px;
     align-items: center;
     background: #e2c27c;
-    color: #193d63;
+    color: #51341e;
     border-radius: 10px;
     padding: 12px 17px;
     font-size: 12px;
@@ -203,26 +200,24 @@ button {
     border: 1px solid rgba(232, 207, 151, 0.55);
     border-radius: 50%;
     box-shadow:
-        0 0 0 20px rgba(255, 255, 255, 0.025),
-        0 0 0 40px rgba(255, 255, 255, 0.025);
+        0 0 0 20px rgba(255, 255, 255, .025),
+        0 0 0 40px rgba(255, 255, 255, .025);
 }
 
 .art-symbol {
     position: absolute;
     font-size: 125px;
     color: #dfc17e;
-    text-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    text-shadow: 0 8px 30px rgba(0, 0, 0, .15);
 }
 
 .art-label {
     position: absolute;
     bottom: 0;
-    color: #dce8f7;
+    color: #f0e2d3;
     font-size: 10px;
     letter-spacing: 1.5px;
 }
-
-/* SECTION HEADINGS */
 
 .section-heading {
     display: flex;
@@ -258,14 +253,12 @@ button {
     gap: 5px;
     padding: 8px 12px;
     border-radius: 100px;
-    background: var(--blue-light);
-    color: var(--blue);
+    background: var(--brown-light);
+    color: var(--brown);
     font-size: 11px;
     font-weight: 700;
     white-space: nowrap;
 }
-
-/* STUDENT CARDS */
 
 .student-grid {
     display: grid;
@@ -274,21 +267,23 @@ button {
 }
 
 .student-card {
+    width: 100%;
     min-width: 0;
     padding: 24px 17px 20px;
     background: var(--white);
+    color: var(--ink);
     border: 1px solid var(--border);
     border-radius: 18px;
     text-align: center;
-    box-shadow: 0 4px 15px rgba(25, 58, 91, 0.03);
-    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
-    animation: appear 0.45s both;
+    box-shadow: 0 4px 15px rgba(87, 55, 31, .045);
+    transition: transform .2s, box-shadow .2s, border-color .2s;
+    animation: appear .45s both;
 }
 
 .student-card:hover,
 .student-card:focus-visible {
     transform: translateY(-5px);
-    border-color: #a9c6e8;
+    border-color: #d4b99c;
     box-shadow: var(--shadow);
     outline: none;
 }
@@ -298,8 +293,8 @@ button {
     display: grid;
     place-items: center;
     border-radius: 50%;
-    background: var(--blue-light);
-    color: var(--blue);
+    background: var(--brown-light);
+    color: var(--brown);
     font-family: "Playfair Display", serif;
     font-size: 27px;
     font-weight: 700;
@@ -326,41 +321,44 @@ button {
     line-height: 1.4;
 }
 
-/* RED SURAH MEMORIZATION NOTICE */
-
+/* Red alerts on the two junior student cards */
 .student-warning {
     display: flex;
     align-items: flex-start;
+    justify-content: flex-start;
     gap: 7px;
-    margin: 0 0 13px;
-    padding: 10px;
-    border: 1px solid #f0baba;
+    width: 100%;
+    margin: -5px 0 13px;
+    padding: 9px 10px;
+    border: 1px solid #f0b9bf;
     border-radius: 10px;
     background: var(--red-light);
-    color: var(--red);
+    color: var(--red-dark);
     text-align: left;
     font-size: 10px;
     font-weight: 700;
-    line-height: 1.5;
+    line-height: 1.45;
+    overflow-wrap: anywhere;
 }
 
 .warning-symbol {
-    display: grid;
+    display: inline-grid;
     place-items: center;
-    flex: 0 0 17px;
-    width: 17px;
-    height: 17px;
+    flex: 0 0 16px;
+    width: 16px;
+    height: 16px;
+    margin-top: 1px;
     border-radius: 50%;
     background: var(--red);
     color: white;
     font-size: 11px;
-    line-height: 1;
+    font-weight: 700;
 }
 
 .student-current {
     min-height: 68px;
     padding: 11px 5px;
-    background: var(--blue-pale);
+    background: #f8f1e9;
     border-radius: 10px;
 }
 
@@ -376,7 +374,7 @@ button {
 
 .student-current strong {
     margin-top: 3px;
-    color: var(--blue);
+    color: var(--brown);
     font-size: 12px;
     overflow-wrap: anywhere;
 }
@@ -384,21 +382,11 @@ button {
 .student-rating {
     margin-top: 14px;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     flex-wrap: wrap;
-    gap: 5px;
+    gap: 2px;
 }
-
-.rating-value {
-    color: var(--ink);
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0;
-    white-space: nowrap;
-}
-
-/* FULL, HALF AND EMPTY STARS */
 
 .star-icon {
     display: inline-block;
@@ -412,26 +400,28 @@ button {
 }
 
 .star-icon.is-empty {
-    color: #d5dce6;
+    color: #d8cfc4;
 }
 
 .star-icon.is-half {
     color: transparent;
-    background: linear-gradient(
-        90deg,
-        var(--gold) 50%,
-        #d5dce6 50%
-    );
+    background: linear-gradient(90deg, var(--gold) 50%, #d8cfc4 50%);
     background-clip: text;
     -webkit-background-clip: text;
 }
 
-/* STUDENT REPORT */
+.rating-value {
+    margin-left: 5px;
+    color: var(--muted);
+    font-size: 10px;
+    font-weight: 700;
+    white-space: nowrap;
+}
 
 .report-section {
     display: none;
     margin: 0 0 58px;
-    animation: appear 0.35s ease both;
+    animation: appear .35s ease both;
 }
 
 .report-section.active {
@@ -444,13 +434,13 @@ button {
     border: 1px solid var(--border);
     border-radius: 10px;
     background: white;
-    color: var(--blue);
+    color: var(--brown);
     font-size: 12px;
     font-weight: 700;
 }
 
 .back-button:hover {
-    background: var(--blue-light);
+    background: var(--brown-light);
 }
 
 .report-header {
@@ -532,7 +522,7 @@ button {
 }
 
 .next-card {
-    background: var(--blue-pale);
+    background: #f4e9dc;
 }
 
 .card-icon {
@@ -560,14 +550,6 @@ button {
     font-size: 12px;
 }
 
-.warning-detail {
-    padding: 9px 11px;
-    border-radius: 8px;
-    background: var(--red-light);
-    color: var(--red) !important;
-    font-weight: 700;
-}
-
 .report-panel {
     margin-top: 20px;
     padding: 25px;
@@ -592,8 +574,6 @@ button {
     font-size: 21px;
 }
 
-/* HIFZ PROGRESS */
-
 .surah-list {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -607,13 +587,13 @@ button {
     gap: 11px;
     padding: 12px;
     border-radius: 10px;
-    background: var(--blue-pale);
+    background: #f8f1e9;
     font-size: 12px;
 }
 
 .surah-item.completed .surah-number {
-    background: #dfebfa;
-    color: var(--blue);
+    background: #ead8c4;
+    color: var(--brown);
 }
 
 .surah-item.current {
@@ -632,8 +612,6 @@ button {
     font-weight: 700;
 }
 
-/* JUNIOR WEEKLY REVIEWS */
-
 .weekly-summary {
     display: flex;
     align-items: center;
@@ -643,8 +621,10 @@ button {
 
 .weekly-score {
     display: flex;
-    flex-wrap: wrap;
-    gap: 3px;
+    gap: 2px;
+    color: var(--gold);
+    font-size: 25px;
+    letter-spacing: 0;
 }
 
 .weekly-summary strong {
@@ -661,21 +641,21 @@ button {
     height: 8px;
     margin: 17px 0 22px;
     border-radius: 100px;
-    background: #e8edf4;
+    background: #e9dfd4;
     overflow: hidden;
 }
 
 .progress-fill {
     width: 0;
     height: 100%;
-    background: linear-gradient(90deg, #2368ad, #c6a45b);
+    background: linear-gradient(90deg, #79502f, #c6a45b);
     border-radius: inherit;
-    transition: width 0.5s ease;
+    transition: width .5s ease;
 }
 
 .comment-box {
     padding: 15px;
-    background: var(--blue-pale);
+    background: #f8f1e9;
     border-radius: 12px;
 }
 
@@ -703,7 +683,6 @@ button {
 .history-item {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     gap: 15px;
     padding: 11px 13px;
     border: 1px solid var(--border);
@@ -712,22 +691,24 @@ button {
 }
 
 .history-stars {
-    display: flex;
-    gap: 2px;
+    color: var(--gold);
+    letter-spacing: 1px;
 }
 
-/* TEACHER FEEDBACK */
-
 .review-stars {
+    margin-top: 19px;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    gap: 5px;
-    margin-top: 19px;
+    gap: 3px;
+}
+
+.review-stars .star-icon {
+    font-size: 26px;
 }
 
 .teacher-review {
-    color: #59677a;
+    color: #66584b;
     font-size: 13px;
     line-height: 1.8;
 }
@@ -739,7 +720,7 @@ button {
     font-size: 11px;
 }
 
-/* ISLAMIC VIDEO LIBRARY */
+/* ---------------- YOUTUBE LEARNING LIBRARY ---------------- */
 
 .video-section {
     margin: 70px 0;
@@ -758,7 +739,7 @@ button {
     height: 52px;
     flex-shrink: 0;
     color: var(--gold);
-    background: var(--blue);
+    background: var(--brown);
     border-radius: 16px;
     font-size: 18px;
 }
@@ -766,7 +747,7 @@ button {
 .featured-video {
     overflow: hidden;
     border-radius: 20px;
-    background: var(--blue-dark);
+    background: var(--brown-dark);
     color: white;
     box-shadow: var(--shadow);
 }
@@ -778,8 +759,8 @@ button {
     padding: 30px;
     min-height: 175px;
     background:
-        radial-gradient(circle at 85% 20%, #2868a8, transparent 40%),
-        linear-gradient(120deg, var(--blue-dark), var(--blue));
+        radial-gradient(circle at 85% 20%, #9a704b, transparent 40%),
+        linear-gradient(120deg, #4a2d18, #79502f);
 }
 
 .featured-play {
@@ -788,7 +769,7 @@ button {
     width: 62px;
     height: 62px;
     flex-shrink: 0;
-    border: 1px solid rgba(230, 203, 141, 0.5);
+    border: 1px solid rgba(230, 203, 141, .5);
     border-radius: 50%;
     color: #f0d79c;
     font-size: 22px;
@@ -806,7 +787,7 @@ button {
 
 .featured-placeholder p {
     margin: 5px 0 0;
-    color: #dce8f7;
+    color: #f1e4d6;
     font-size: 12px;
 }
 
@@ -814,7 +795,7 @@ button {
     position: relative;
     width: 100%;
     aspect-ratio: 16 / 9;
-    background: #071d33;
+    background: #24170e;
 }
 
 .video-player iframe {
@@ -870,17 +851,17 @@ button {
 .category-button {
     padding: 9px 13px;
     background: white;
-    color: #64748b;
+    color: #76685b;
     border: 1px solid var(--border);
     border-radius: 100px;
     font-size: 11px;
-    transition: 0.2s;
+    transition: .2s;
 }
 
 .category-button:hover,
 .category-button.active {
-    background: var(--blue);
-    border-color: var(--blue);
+    background: var(--brown);
+    border-color: var(--brown);
     color: white;
 }
 
@@ -896,7 +877,7 @@ button {
     border-radius: 16px;
     background: white;
     border: 1px solid var(--border);
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition: transform .2s, box-shadow .2s;
 }
 
 .video-card:hover {
@@ -918,7 +899,7 @@ button {
     padding: 15px;
     overflow: hidden;
     text-align: center;
-    background: linear-gradient(135deg, var(--blue-dark), #2867a7);
+    background: linear-gradient(135deg, #56371f, #a1744c);
     color: #f0d79c;
 }
 
@@ -926,7 +907,7 @@ button {
 .video-thumbnail::after {
     content: "۞";
     position: absolute;
-    color: rgba(240, 215, 156, 0.15);
+    color: rgba(240, 215, 156, .15);
     font-size: 95px;
 }
 
@@ -948,9 +929,9 @@ button {
     width: 43px;
     height: 43px;
     margin: auto;
-    border: 1px solid rgba(240, 215, 156, 0.65);
+    border: 1px solid rgba(240, 215, 156, .65);
     border-radius: 50%;
-    background: rgba(10, 42, 70, 0.4);
+    background: rgba(45, 27, 13, .45);
     font-size: 14px;
 }
 
@@ -993,8 +974,8 @@ button {
 }
 
 .video-category-tag {
-    color: var(--blue);
-    background: var(--blue-light);
+    color: var(--brown);
+    background: var(--brown-light);
     padding: 5px 8px;
     border-radius: 7px;
     font-size: 9px;
@@ -1006,13 +987,13 @@ button {
     border-radius: 8px;
     padding: 8px 11px;
     color: white;
-    background: var(--blue);
+    background: var(--brown);
     font-size: 10px;
     font-weight: 700;
 }
 
 .watch-button:hover {
-    background: var(--blue-dark);
+    background: var(--brown-dark);
 }
 
 .empty-message {
@@ -1029,13 +1010,11 @@ button {
     line-height: 1.7;
 }
 
-/* FOOTER */
-
 .site-footer {
     margin-top: 70px;
     padding: 36px 20px;
     text-align: center;
-    background: var(--blue-dark);
+    background: #4a2d18;
     color: white;
 }
 
@@ -1051,20 +1030,18 @@ button {
 
 .site-footer p {
     margin: 7px 0;
-    color: #d1e0f0;
+    color: #ead8c4;
     font-size: 12px;
 }
 
 .site-footer small {
-    color: #b3cbe4;
+    color: #d0b69a;
     font-size: 10px;
 }
 
 [hidden] {
     display: none !important;
 }
-
-/* ANIMATIONS */
 
 @keyframes appear {
     from {
@@ -1077,8 +1054,6 @@ button {
         transform: translateY(0);
     }
 }
-
-/* TABLET */
 
 @media (max-width: 900px) {
     .student-grid {
@@ -1094,20 +1069,14 @@ button {
     }
 
     .welcome-art {
-        transform: scale(0.85);
+        transform: scale(.85);
     }
 }
-
-/* MOBILE */
 
 @media (max-width: 600px) {
     .site-header {
         min-height: 72px;
         padding: 13px 5%;
-    }
-
-    .brand {
-        gap: 9px;
     }
 
     .brand-icon {
@@ -1153,7 +1122,7 @@ button {
     .welcome-art {
         min-height: 115px;
         margin-top: 5px;
-        transform: scale(0.72);
+        transform: scale(.72);
     }
 
     .art-circle {
@@ -1207,28 +1176,41 @@ button {
 
     .student-type {
         font-size: 9px;
+        margin-bottom: 14px;
     }
 
     .student-warning {
         gap: 5px;
-        padding: 8px;
+        padding: 8px 7px;
         font-size: 9px;
+    }
+
+    .warning-symbol {
+        flex-basis: 14px;
+        width: 14px;
+        height: 14px;
+        font-size: 10px;
+    }
+
+    .student-current {
+        min-height: 68px;
     }
 
     .student-current strong {
         font-size: 11px;
     }
 
-    .star-icon {
+    .student-rating {
+        gap: 1px;
+    }
+
+    .student-rating .star-icon {
         font-size: 15px;
     }
 
-    .student-rating {
-        gap: 3px;
-    }
-
     .rating-value {
-        font-size: 10px;
+        margin-left: 3px;
+        font-size: 9px;
     }
 
     .report-header {
@@ -1277,12 +1259,12 @@ button {
         grid-template-columns: 1fr;
     }
 
-    .weekly-summary {
-        gap: 10px;
+    .weekly-score {
+        font-size: 20px;
     }
 
-    .star-icon {
-        font-size: 17px;
+    .review-stars .star-icon {
+        font-size: 23px;
     }
 
     .video-section {
@@ -1360,7 +1342,7 @@ button {
     *::before,
     *::after {
         scroll-behavior: auto !important;
-        animation-duration: 0.01ms !important;
-        transition-duration: 0.01ms !important;
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
     }
 }
