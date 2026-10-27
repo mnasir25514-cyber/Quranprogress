@@ -102,8 +102,8 @@ const videos = [
         id: 1,
         title: "Surah Recitation",
         category: "Surah Recitation",
-        description: "Surah Al-Feel recitation to help with pronunciation.",
-        url: "https://youtu.be/DoBVa94v3pI?si=0dkuDGzpNd8-9HUh"
+        description: "Surah Al-QADR recitation to help with pronunciation.",
+        url: "https://youtu.be/3RLNnB4-0aQ?si=bwzYy01HzzMvQbLg"
     },
     {
         id: 2,
