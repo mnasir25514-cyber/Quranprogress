@@ -1,7 +1,8 @@
 /* =====================================================
    QURAN LEARNING WEBSITE
-   Student Reports + Islamic YouTube Learning Library
-   Edit your student details and video links in this file.
+   Student reports + Islamic YouTube Learning Library
+
+   EDIT YOUR VIDEOS IN THE videos ARRAY BELOW.
    ===================================================== */
 
 /* ---------------- STUDENT INFORMATION ---------------- */
@@ -12,41 +13,39 @@ const students = [
         name: "Muhammad",
         type: "Quran Student",
         level: "29th Para",
-        current: "Surah Al-Feel",
-        next: "Continue Surah Al-Feel",
-        rating: 4.5,
+        current: "Surah Al-Qadr",
+        next: "Memorize Surah Al-Qadr",
+        rating: 4,
         description: "Quran reading and Hifz progress",
-        notice: "Surah Al-Feel has not been memorized yet.",
-        teacherReview:
-            "MashaAllah! Muhammad is making good progress with the Quran. He is currently working on Surah Al-Feel. Regular revision and practice will help strengthen his memorization.",
+        teacherReview: "Muhammad did not memorize Surah Al-Feel on time. Please take Hifz practice seriously and make sure he revises regularly at home so he stays on schedule.",
         completedSurahs: [
             "Surah Al-Fatiha",
             "Surah An-Naas",
             "Surah Al-Falaq",
             "Surah An-Nasr",
             "Surah Al-Lahab",
-            "Surah Al-Kausar"
+            "Surah Al-Kausar",
+            "Surah Al-Feel"
         ]
     },
     {
         id: "nusaiba",
         name: "Nusaiba",
         type: "Quran Student",
-        level: "16th Para",
-        current: "Surah Al-Feel",
-        next: "Continue Surah Al-Feel",
-        rating: 3.5,
+        level: "17th Para",
+        current: "Surah Al-Qadr",
+        next: "Memorize Surah Al-Qadr",
+        rating: 4,
         description: "Quran reading and Hifz progress",
-        notice: "Surah Al-Feel has not been memorized yet.",
-        teacherReview:
-            "Nusaiba is continuing her Quran learning and should keep practising Surah Al-Feel. Regular revision at home will help improve her confidence and strengthen memorization.",
+        teacherReview: "Nusaiba did not memorize Surah Al-Feel on time. Please take Hifz practice seriously and make sure she revises regularly at home so she stays on schedule.",
         completedSurahs: [
             "Surah Al-Fatiha",
             "Surah An-Naas",
             "Surah Al-Falaq",
             "Surah An-Nasr",
             "Surah Al-Lahab",
-            "Surah Al-Kausar"
+            "Surah Al-Kausar",
+            "Surah Al-Feel"
         ]
     },
     {
@@ -54,17 +53,16 @@ const students = [
         name: "Ibrahim",
         type: "Junior - Amma Para",
         level: "Amma Para",
-        current: "Surah Al-Lahab",
-        next: "Continue Surah Al-Lahab",
-        rating: 5,
-        weeklyRating: 5,
+        current: "Surah Al-Kawthar",
+        next: "Continue practising Surah Al-Kawthar",
+        rating: 4,
+        weeklyRating: 4,
         description: "Junior Quran reading progress",
-        teacherReview:
-            "Ibrahim needs to improve his reading fluency and pronunciation. Please help him practise reading the Surahs at home before Quran sessions. Regular practice will help him read more confidently.",
-        weeklyComment:
-            "Needs improvement in reading. Please practise the current Surah at home before each Quran session, focusing on clear pronunciation and steady reading.",
+        notice: "Indiscipline in class",
+        teacherReview: "Ibrahim needs to show better discipline in Quran class and give more attention to his home lesson. Please help him practise regularly at home and follow classroom instructions.",
+        weeklyComment: "Ibrahim should be more disciplined during Quran class and focus carefully on his home lesson. Please practise Surah Al-Kawthar together at home before the next session.",
         weeklyHistory: [
-            { week: "This Week", rating: 5 },
+            { week: "This Week", rating: 4 },
             { week: "Previous Week", rating: 4 },
             { week: "2 Weeks Ago", rating: 3 }
         ]
@@ -76,30 +74,28 @@ const students = [
         level: "Takhti 13",
         current: "Takhti 13",
         next: "Takhti 14",
-        rating: 5,
-        weeklyRating: 5,
+        rating: 4,
+        weeklyRating: 4,
         description: "Junior Noorani Qaida progress",
-        teacherReview:
-            "Excellent progress, Mustafa! MashaAllah, he is doing very well in Noorani Qaida and has reached Takhti 13. Keep up the excellent effort and continue practising the lesson at home before each Quran session.",
-        weeklyComment:
-            "Excellent effort this week! Keep practising Takhti 13 carefully and read the lesson at home before the next Quran session.",
+        notice: "Indiscipline in class",
+        teacherReview: "Mustafa needs to show better discipline in Quran class and give more attention to his home lesson. Please help him follow classroom instructions and practise Takhti 13 regularly at home.",
+        weeklyComment: "Mustafa should be more disciplined during Quran class and focus carefully on his home lesson. Please practise Takhti 13 together at home before the next session.",
         weeklyHistory: [
-            { week: "This Week", rating: 5 },
+            { week: "This Week", rating: 4 },
             { week: "Previous Week", rating: 4 },
             { week: "2 Weeks Ago", rating: 3 }
         ]
     }
 ];
 
+/* ---------------- VIDEO LIBRARY ----------------
+   Add, edit, or remove video objects in this array.
 
-/* ---------------- YOUTUBE VIDEO LIBRARY ----------------
-   Edit these video entries whenever you want.
-
-   Allowed categories:
+   category must be one of:
    "Surah Recitation"
    "Sahabah Stories"
    "Islamic Lessons"
-   ------------------------------------------------------- */
+   ------------------------------------------------ */
 
 const videos = [
     {
@@ -113,7 +109,7 @@ const videos = [
         id: 2,
         title: "Stories of the Sahabah (RA)",
         category: "Sahabah Stories",
-        description: "Watch this and prepare for the quiz that may be held next week for Nusaiba and Muhammad.",
+        description: "Watch this and get ready for the quiz that may be held next week for Nusaiba and Muhammad.",
         url: "https://youtu.be/ZSLMniXcFuk?si=S3tlz9RJ_-kZ-kUc"
     },
     {
@@ -124,7 +120,6 @@ const videos = [
         url: "https://youtu.be/_NxLoGB0fXw?si=CfqqwuNxr8Twjv9e"
     }
 ];
-
 
 /* ---------------- GET HTML ELEMENTS ---------------- */
 
@@ -172,26 +167,18 @@ const featuredDescription = document.getElementById("featured-description");
 const featuredPlaceholder = document.querySelector(".featured-placeholder");
 const emptyVideos = document.getElementById("empty-videos");
 
-
 /* ---------------- GENERAL HELPERS ---------------- */
 
-function getInitial(name) {
-    return name.charAt(0).toUpperCase();
+function getStars(number) {
+    let result = "";
+
+    for (let i = 1; i <= 5; i++) {
+        result += i <= number ? "★" : "☆";
+    }
+
+    return result;
 }
 
-function formatRating(number) {
-    return Number.isInteger(number) ? String(number) : number.toFixed(1);
-}
-
-function getRatingText(number) {
-    if (number >= 4.5) return "Excellent";
-    if (number >= 3.5) return "Very Good";
-    if (number >= 3) return "Good";
-    if (number >= 2) return "Needs More Practice";
-    return "Needs Improvement";
-}
-
-/* Displays full, half, and empty stars correctly. */
 function getStarsMarkup(number) {
     let markup = "";
 
@@ -204,17 +191,27 @@ function getStarsMarkup(number) {
             starClass = "star-icon is-half";
         }
 
-        markup +=
-            '<span class="' + starClass + '" aria-hidden="true">★</span>';
+        markup += '<span class="' + starClass + '" aria-hidden="true">★</span>';
     }
 
     return markup;
 }
 
-function getStars(number) {
-    return "★".repeat(Math.floor(number)) +
-        (number % 1 ? "⯪" : "") +
-        "☆".repeat(5 - Math.ceil(number));
+function formatRating(number) {
+    return Number.isInteger(number) ? String(number) : number.toFixed(1);
+}
+
+function getInitial(name) {
+    return name.charAt(0).toUpperCase();
+}
+
+function getRatingText(number) {
+    if (number >= 4.5) return "Excellent";
+    if (number >= 3.5) return "Very Good";
+    if (number >= 3) return "Good";
+    if (number >= 2) return "Needs More Practice";
+
+    return "Needs Improvement";
 }
 
 function setDate() {
@@ -225,7 +222,6 @@ function setDate() {
         year: "numeric"
     });
 }
-
 
 /* ---------------- STUDENT CARDS ---------------- */
 
@@ -243,26 +239,16 @@ function createStudentCards() {
         );
 
         card.innerHTML =
-            '<div class="student-avatar">' +
-                getInitial(student.name) +
-            '</div>' +
-            '<h3 class="student-name">' +
-                student.name +
-            '</h3>' +
-            '<span class="student-type">' +
-                student.type +
-            '</span>';
+            '<div class="student-avatar">' + getInitial(student.name) + '</div>' +
+            '<h3 class="student-name">' + student.name + '</h3>' +
+            '<span class="student-type">' + student.type + '</span>';
 
         if (student.notice) {
             const notice = document.createElement("span");
             notice.className = "student-warning";
+            notice.innerHTML =
+                '<span class="warning-symbol" aria-hidden="true">!</span>';
 
-            const symbol = document.createElement("span");
-            symbol.className = "warning-symbol";
-            symbol.setAttribute("aria-hidden", "true");
-            symbol.textContent = "!";
-
-            notice.appendChild(symbol);
             notice.appendChild(document.createTextNode(student.notice));
             card.appendChild(notice);
         }
@@ -283,8 +269,8 @@ function createStudentCards() {
         rating.innerHTML =
             getStarsMarkup(student.rating) +
             '<span class="rating-value">' +
-                formatRating(student.rating) + '/5' +
-            '</span>';
+            formatRating(student.rating) +
+            '/5</span>';
 
         card.appendChild(rating);
 
@@ -297,7 +283,6 @@ function createStudentCards() {
 
     studentCount.textContent = students.length;
 }
-
 
 /* ---------------- STUDENT REPORTS ---------------- */
 
@@ -318,7 +303,9 @@ function showStudent(student) {
 
     currentDetail.textContent =
         student.id === "muhammad" || student.id === "nusaiba"
-            ? "Continue practising Surah Al-Feel before marking it as memorized."
+            ? "New Hifz target: practise and revise " +
+              student.current +
+              " regularly at home."
             : "Currently learning and practising this lesson.";
 
     nextLearning.textContent = student.next;
@@ -335,20 +322,13 @@ function showStudent(student) {
     ratingStars.innerHTML =
         getStarsMarkup(student.rating) +
         '<span class="rating-value">' +
-            formatRating(student.rating) + '/5' +
-        '</span>';
+        formatRating(student.rating) +
+        '/5</span>';
 
     ratingStars.setAttribute(
         "aria-label",
         formatRating(student.rating) + " out of 5 stars"
     );
-
-    if (student.notice) {
-        currentDetail.classList.add("warning-detail");
-        currentDetail.textContent = student.notice;
-    } else {
-        currentDetail.classList.remove("warning-detail");
-    }
 
     if (student.completedSurahs) {
         showQuranProgress(student);
@@ -358,7 +338,6 @@ function showStudent(student) {
 
     window.scrollTo({ top: 0, behavior: "smooth" });
 }
-
 
 function showQuranProgress(student) {
     hifzSection.hidden = false;
@@ -386,7 +365,6 @@ function showQuranProgress(student) {
     surahList.appendChild(current);
 }
 
-
 function showJuniorProgress(student) {
     hifzSection.hidden = true;
     hifzSection.style.display = "none";
@@ -412,7 +390,7 @@ function showJuniorProgress(student) {
 
         const stars = document.createElement("span");
         stars.className = "history-stars";
-        stars.innerHTML = getStarsMarkup(item.rating);
+        stars.textContent = getStars(item.rating);
         stars.setAttribute(
             "aria-label",
             item.rating + " out of 5 stars"
@@ -423,7 +401,6 @@ function showJuniorProgress(student) {
         weeklyHistoryList.appendChild(history);
     });
 }
-
 
 function showStudentList() {
     reportSection.classList.remove("active");
@@ -442,7 +419,6 @@ homeLink.addEventListener("click", function(event) {
     showStudentList();
 });
 
-
 /* ---------------- YOUTUBE VIDEO LIBRARY ---------------- */
 
 const videoCategories = [
@@ -454,7 +430,6 @@ const videoCategories = [
 
 let activeCategory = "All Videos";
 let activeVideoId = null;
-
 
 function getYouTubeId(url) {
     if (!url || typeof url !== "string") return "";
@@ -470,10 +445,7 @@ function getYouTubeId(url) {
         const hostname = parsedUrl.hostname.toLowerCase();
         let videoId = "";
 
-        if (
-            hostname === "youtu.be" ||
-            hostname.endsWith(".youtu.be")
-        ) {
+        if (hostname === "youtu.be" || hostname.endsWith(".youtu.be")) {
             videoId =
                 parsedUrl.pathname.split("/").filter(Boolean)[0] || "";
         } else if (
@@ -485,8 +457,7 @@ function getYouTubeId(url) {
             if (parsedUrl.pathname === "/watch") {
                 videoId = parsedUrl.searchParams.get("v") || "";
             } else {
-                const parts =
-                    parsedUrl.pathname.split("/").filter(Boolean);
+                const parts = parsedUrl.pathname.split("/").filter(Boolean);
 
                 if (
                     parts.length >= 2 &&
@@ -502,7 +473,6 @@ function getYouTubeId(url) {
         return "";
     }
 }
-
 
 function renderCategoryFilters() {
     categoryFilters.innerHTML = "";
@@ -527,7 +497,6 @@ function renderCategoryFilters() {
         categoryFilters.appendChild(button);
     });
 }
-
 
 function renderVideos() {
     videoGrid.innerHTML = "";
@@ -561,6 +530,7 @@ function renderVideos() {
         thumbnail.setAttribute("role", "button");
         thumbnail.setAttribute("tabindex", "0");
         thumbnail.setAttribute("aria-label", "Play " + video.title);
+        thumbnail.style.cursor = "pointer";
 
         const playIcon = document.createElement("span");
         playIcon.className = "thumbnail-icon";
@@ -625,23 +595,22 @@ function renderVideos() {
     emptyVideos.hidden = filteredVideos.length > 0;
 }
 
-
 function playVideo(video) {
     const youtubeId = getYouTubeId(video.url);
 
     if (!youtubeId) {
         featuredTitle.textContent = video.title;
         featuredDescription.textContent =
-            "Please add a valid YouTube URL to this video in app.js.";
+            "This video needs a valid YouTube URL. Edit the videos list in app.js and add its link.";
 
         featuredPlaceholder.hidden = false;
         videoPlayer.hidden = true;
         videoPlayer.innerHTML = "";
+
         return;
     }
 
     activeVideoId = video.id;
-
     featuredTitle.textContent = video.title;
     featuredDescription.textContent =
         video.category + " · Selected by your teacher";
@@ -653,7 +622,6 @@ function playVideo(video) {
     const iframe = document.createElement("iframe");
     iframe.src =
         "https://www.youtube-nocookie.com/embed/" + youtubeId + "?rel=0";
-
     iframe.title = video.title;
     iframe.allow =
         "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
@@ -670,7 +638,6 @@ function playVideo(video) {
         block: "start"
     });
 }
-
 
 /* ---------------- START WEBSITE ---------------- */
 
