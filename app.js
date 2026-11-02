@@ -1,7 +1,375 @@
 /* =====================================================
    QURAN LEARNING WEBSITE
    Student reports + Islamic YouTube Learning Library
+/* ==========================================================================
+   DATA STRUCTURES
+   ========================================================================== */
 
+// 1. Student Information Array
+const students = [
+    {
+        id: 1,
+        name: "Muhammad",
+        category: "Quran Student",
+        currentLevelLabel: "Current Para",
+        currentLevelValue: "29th Para",
+        targetLabel: "Current Hifz target",
+        targetValue: "Surah Al-Qadr",
+        nextStep: "Memorize Surah Al-Qadr",
+        rating: 4,
+        alert: null, // No red alert
+        completedHifz: [
+            "Surah Al-Fatiha", 
+            "Surah An-Naas", 
+            "Surah Al-Falaq", 
+            "Surah An-Nasr", 
+            "Surah Al-Lahab", 
+            "Surah Al-Kausar", 
+            "Surah Al-Feel" // Included as requested
+        ],
+        teacherReview: "Muhammad did not memorize Surah Al-Feel on time. Please take Hifz practice seriously and make sure he revises regularly at home so he stays on schedule.",
+        weeklyReview: null,
+        weeklyHistory: null
+    },
+    {
+        id: 2,
+        name: "Nusaiba",
+        category: "Quran Student",
+        currentLevelLabel: "Current Para",
+        currentLevelValue: "17th Para",
+        targetLabel: "Current Hifz target",
+        targetValue: "Surah Al-Qadr",
+        nextStep: "Memorize Surah Al-Qadr",
+        rating: 4,
+        alert: null, // No red alert
+        completedHifz: [
+            "Surah Al-Fatiha", 
+            "Surah An-Naas", 
+            "Surah Al-Falaq", 
+            "Surah An-Nasr", 
+            "Surah Al-Lahab", 
+            "Surah Al-Kausar", 
+            "Surah Al-Feel" // Included as requested
+        ],
+        teacherReview: "Nusaiba did not memorize Surah Al-Feel on time. Please take Hifz practice seriously and make sure she revises regularly at home so she stays on schedule.",
+        weeklyReview: null,
+        weeklyHistory: null
+    },
+    {
+        id: 3,
+        name: "Ibrahim",
+        category: "Junior — Amma Para",
+        currentLevelLabel: "Current Lesson",
+        currentLevelValue: "Surah Al-Kawthar",
+        targetLabel: "Next Step",
+        targetValue: "Practice at home",
+        nextStep: "Surah Al-Kawthar Revision",
+        rating: 4,
+        alert: "Indiscipline in class", // Red alert requested
+        completedHifz: null,
+        teacherReview: "Ibrahim needs to show better discipline in Quran class and give more attention to his home lesson. Please help him practise regularly at home and follow classroom instructions.",
+        weeklyReview: "Ibrahim should be more disciplined during Quran class and focus carefully on his home lesson. Please practise Surah Al-Kawthar together at home before the next session.",
+        weeklyHistory: [
+            { label: "This Week", rating: 4 },
+            { label: "Previous Week", rating: 4 },
+            { label: "Two Weeks Ago", rating: 3 }
+        ]
+    },
+    {
+        id: 4,
+        name: "Mustafa",
+        category: "Junior — Noorani Qaida",
+        currentLevelLabel: "Current Takhti",
+        currentLevelValue: "Takhti 13",
+        targetLabel: "Next Takhti",
+        targetValue: "Takhti 14",
+        nextStep: "Master Takhti 13",
+        rating: 4,
+        alert: "Indiscipline in class", // Red alert requested
+        completedHifz: null,
+        teacherReview: "Mustafa needs to show better discipline in Quran class and give more attention to his home lesson. Please help him follow classroom instructions and practise Takhti 13 regularly at home.",
+        weeklyReview: "Mustafa should be more disciplined during Quran class and focus carefully on his home lesson. Please practise Takhti 13 together at home before the next session.",
+        weeklyHistory: [
+            { label: "This Week", rating: 4 },
+            { label: "Previous Week", rating: 4 },
+            { label: "Two Weeks Ago", rating: 3 }
+        ]
+    }
+];
+
+// 2. YouTube Learning Library Array
+// YouTube standard URL converted to privacy-enhanced embed URL
+const videos = [
+    {
+        title: "Surah Recitation",
+        category: "Surah Recitation",
+        description: "Surah Al-Feel recitation to help with pronunciation.",
+        url: "https://www.youtube-nocookie.com/embed/DoBVa94v3pI"
+    },
+    {
+        title: "Stories of the Sahabah (RA)",
+        category: "Sahabah Stories",
+        description: "Watch this and get ready for the quiz that may be held next week for Nusaiba and Muhammad.",
+        url: "https://www.youtube-nocookie.com/embed/ZSLMniXcFuk"
+    },
+    {
+        title: "Islamic Lessons for Students",
+        category: "Islamic Lessons",
+        description: "A must-watch video.",
+        url: "https://www.youtube-nocookie.com/embed/_NxLoGB0fXw"
+    }
+];
+
+
+/* ==========================================================================
+   INITIALIZATION & UTILITIES
+   ========================================================================== */
+
+document.addEventListener('DOMContentLoaded', () => {
+    setCurrentDate();
+    renderDashboard();
+    renderVideos('All', '');
+    
+    // Set dynamic year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+});
+
+// Utility to generate Star Ratings HTML
+function getStarsHTML(rating) {
+    let starsHtml = '';
+    for (let i = 1; i <= 5; i++) {
+        if (i <= rating) {
+            starsHtml += '<i class="fa-solid fa-star"></i>';
+        } else {
+            starsHtml += '<i class="fa-regular fa-star"></i>';
+        }
+    }
+    return starsHtml;
+}
+
+// Display Current Date in Header
+function setCurrentDate() {
+    const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    const today = new Date();
+    document.getElementById('current-date').textContent = today.toLocaleDateString('en-US', dateOptions);
+}
+
+// Scroll down to Dashboard from Hero button
+function scrollToDashboard() {
+    document.getElementById('dashboard-view').scrollIntoView({ behavior: 'smooth' });
+}
+
+
+/* ==========================================================================
+   STUDENT DASHBOARD LOGIC
+   ========================================================================== */
+
+function renderDashboard() {
+    const grid = document.getElementById('student-grid');
+    grid.innerHTML = '';
+
+    students.forEach(student => {
+        // Build Alert Badge if exists
+        const alertHtml = student.alert 
+            ? `<div class="alert-badge"><i class="fa-solid fa-triangle-exclamation"></i> ${student.alert}</div>` 
+            : '';
+
+        // Avatar Initial
+        const initial = student.name.charAt(0);
+
+        // Card HTML
+        const card = document.createElement('div');
+        card.className = 'student-card';
+        card.onclick = () => showStudentDetail(student.id);
+        card.innerHTML = `
+            <div class="avatar">${initial}</div>
+            <h4>${student.name}</h4>
+            <div class="category">${student.category}</div>
+            
+            <div class="stars">
+                ${getStarsHTML(student.rating)}
+            </div>
+
+            <div class="progress-info">
+                <p>${student.currentLevelLabel}: <span>${student.currentLevelValue}</span></p>
+                <p>${student.targetLabel}: <span>${student.targetValue}</span></p>
+            </div>
+            
+            ${alertHtml}
+        `;
+        grid.appendChild(card);
+    });
+}
+
+
+/* ==========================================================================
+   STUDENT DETAIL LOGIC
+   ========================================================================== */
+
+function showStudentDetail(studentId) {
+    const student = students.find(s => s.id === studentId);
+    if (!student) return;
+
+    // View toggling
+    document.getElementById('dashboard-view').classList.add('hidden-view');
+    document.getElementById('detail-view').classList.remove('hidden-view');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    const detailContent = document.getElementById('detail-content');
+    const initial = student.name.charAt(0);
+    const todayStr = new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+
+    // 1. Common Header
+    let html = `
+        <div class="detail-card">
+            <div class="detail-header">
+                <div class="avatar">${initial}</div>
+                <div class="detail-title">
+                    <h2>${student.name}</h2>
+                    <div class="category">${student.category}</div>
+                    <div class="stars">${getStarsHTML(student.rating)}</div>
+                </div>
+            </div>
+            
+            <div class="detail-grid">
+                <!-- Column 1: Current Status & Teacher Review -->
+                <div class="detail-col">
+                    <div class="info-block">
+                        <h4><i class="fa-solid fa-location-crosshairs"></i> Current Progress</h4>
+                        <div class="progress-info" style="background: transparent; padding:0;">
+                            <p>${student.currentLevelLabel}: <span>${student.currentLevelValue}</span></p>
+                            <p>${student.targetLabel}: <span>${student.targetValue}</span></p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-block">
+                        <h4><i class="fa-solid fa-comment-dots"></i> Teacher's Review</h4>
+                        <div class="review-box">"${student.teacherReview}"</div>
+                    </div>
+                </div>
+                
+                <!-- Column 2: Specific Data (Hifz List OR Weekly History) -->
+                <div class="detail-col">
+    `;
+
+    // 2. Conditional rendering based on student type
+    if (student.completedHifz) {
+        // Quran Students (Muhammad & Nusaiba)
+        let hifzItems = student.completedHifz.map(surah => 
+            `<li><i class="fa-solid fa-circle-check"></i> ${surah}</li>`
+        ).join('');
+
+        html += `
+            <div class="info-block">
+                <h4><i class="fa-solid fa-book-open"></i> Completed Hifz</h4>
+                <ul class="hifz-list">
+                    ${hifzItems}
+                </ul>
+                <div class="next-target">
+                    <div>
+                        <div style="font-size: 0.85rem; opacity: 0.9;">Next Target</div>
+                        <strong>${student.nextStep}</strong>
+                    </div>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+            </div>
+        `;
+    } else if (student.weeklyHistory) {
+        // Junior Students (Ibrahim & Mustafa)
+        html += `
+            <div class="info-block">
+                <h4><i class="fa-solid fa-calendar-week"></i> Weekly Review</h4>
+                <div class="review-box" style="background: var(--bg-cream); border-color: var(--gold-accent);">
+                    "${student.weeklyReview}"
+                </div>
+            </div>
+
+            <div class="info-block">
+                <h4><i class="fa-solid fa-clock-rotate-left"></i> Rating History</h4>
+                <ul class="history-list">
+                    ${student.weeklyHistory.map(hist => `
+                        <li>
+                            <span>${hist.label}</span>
+                            <span class="stars" style="margin:0;">${getStarsHTML(hist.rating)}</span>
+                        </li>
+                    `).join('')}
+                </ul>
+            </div>
+        `;
+    }
+
+    // 3. Close HTML tags
+    html += `
+                </div> <!-- End Col 2 -->
+            </div> <!-- End Grid -->
+            <div class="update-date">Last Updated: ${todayStr}</div>
+        </div>
+    `;
+
+    detailContent.innerHTML = html;
+}
+
+function hideStudentDetail() {
+    document.getElementById('detail-view').classList.add('hidden-view');
+    document.getElementById('dashboard-view').classList.remove('hidden-view');
+}
+
+
+/* ==========================================================================
+   YOUTUBE LIBRARY LOGIC
+   ========================================================================== */
+
+// Event listeners for search and filters
+document.getElementById('video-search').addEventListener('input', (e) => {
+    const activeFilter = document.querySelector('.filter-btn.active').dataset.filter;
+    renderVideos(activeFilter, e.target.value);
+});
+
+document.getElementById('category-filters').addEventListener('click', (e) => {
+    if (e.target.classList.contains('filter-btn')) {
+        // Update active class
+        document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+        e.target.classList.add('active');
+        
+        // Render based on new filter and current search term
+        const searchTerm = document.getElementById('video-search').value;
+        renderVideos(e.target.dataset.filter, searchTerm);
+    }
+});
+
+function renderVideos(categoryFilter, searchQuery) {
+    const grid = document.getElementById('video-grid');
+    grid.innerHTML = '';
+    
+    const query = searchQuery.toLowerCase().trim();
+
+    const filteredVideos = videos.filter(video => {
+        const matchesCategory = categoryFilter === 'All' || video.category === categoryFilter;
+        const matchesSearch = video.title.toLowerCase().includes(query) || video.description.toLowerCase().includes(query);
+        return matchesCategory && matchesSearch;
+    });
+
+    if (filteredVideos.length === 0) {
+        grid.innerHTML = `<p style="grid-column: 1/-1; text-align: center; color: var(--text-muted);">No videos found matching your search.</p>`;
+        return;
+    }
+
+    filteredVideos.forEach(video => {
+        const card = document.createElement('div');
+        card.className = 'video-card';
+        card.innerHTML = `
+            <div class="video-wrapper">
+                <iframe src="${video.url}" title="${video.title}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+                <div class="video-category">${video.category}</div>
+                <h4>${video.title}</h4>
+                <p>${video.description}</p>
+            </div>
+        `;
+        grid.appendChild(card);
+    });
+}
    EDIT YOUR VIDEOS IN THE videos ARRAY BELOW.
    ===================================================== */
 
