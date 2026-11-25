@@ -1,217 +1,654 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#29143f">
-    <meta name="description" content="A beautiful Quran learning progress portal for students and their families.">
-    <title>Quran Learning — A Journey of Light</title>
+    <meta name="theme-color" content="#173b3a">
+    <meta name="description" content="Quran learning progress, online learning materials, and student reports.">
+    <title>Quran Learning | Learning with Purpose</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
     <script src="app.js" defer></script>
 </head>
+
 <body>
-    <!-- Elegant Bismillah opening loader -->
-    <div class="site-loader" id="site-loader" aria-label="Loading Quran Learning website">
-        <div class="loader-ornament" aria-hidden="true">۞</div>
-        <p class="loader-arabic" lang="ar" dir="rtl">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
-        <p class="loader-caption">IN THE NAME OF ALLAH, THE MOST GRACIOUS, THE MOST MERCIFUL</p>
-        <span class="loader-line" aria-hidden="true"></span>
+
+    <!-- Opening Bismillah loader -->
+    <div class="site-loader" id="site-loader">
+        <div class="loader-decoration">۞</div>
+
+        <p class="loader-arabic" lang="ar" dir="rtl">
+            بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
+        </p>
+
+        <p class="loader-translation">
+            IN THE NAME OF ALLAH, THE MOST GRACIOUS, THE MOST MERCIFUL
+        </p>
+
+        <div class="loader-progress">
+            <span></span>
+        </div>
     </div>
 
+
+    <!-- Website header -->
     <header class="site-header">
-        <a class="brand" href="#home" id="home-link" aria-label="Quran Learning home">
-            <span class="brand-mark" aria-hidden="true">۞</span>
-            <span class="brand-copy">
+
+        <a href="#home" class="brand" id="home-link">
+            <span class="brand-symbol">۞</span>
+
+            <span class="brand-text">
                 <strong>QURAN LEARNING</strong>
                 <small>STUDENT PROGRESS PORTAL</small>
             </span>
         </a>
 
-        <nav class="main-nav" aria-label="Main navigation">
+        <nav class="main-nav">
+            <a href="#online-classroom">Online classes</a>
             <a href="#students">Students</a>
-            <a href="#learning-library">Learning library</a>
+            <a href="#learning-library">Video library</a>
         </nav>
 
         <div class="header-date">
-            <span class="date-label">TODAY</span>
-            <strong id="current-date">Loading date...</strong>
+            <span>TODAY</span>
+            <strong id="current-date">Loading...</strong>
         </div>
+
     </header>
 
+
     <main id="home">
-        <section class="hero-section page-shell">
-            <div class="hero-copy">
-                <span class="eyebrow"><span class="eyebrow-dot"></span> A PLACE TO LEARN &amp; GROW</span>
-                <h1>Every page is a step<br>towards <em>something beautiful.</em></h1>
-                <p class="hero-description">A thoughtful space to follow each student's Quran journey, celebrate progress, and keep learning with purpose.</p>
-                <div class="hero-actions">
-                    <a class="button button-gold" href="#students">Explore student progress <span aria-hidden="true">↗</span></a>
-                    <a class="text-link" href="#learning-library">Visit learning library <span aria-hidden="true">↓</span></a>
+
+        <!-- =========================================
+             ONLINE CLASSROOM
+             The first main section after the loader.
+             ========================================= -->
+
+        <section class="classroom-section page-shell" id="online-classroom">
+
+            <div class="classroom-heading">
+
+                <div class="classroom-heading-copy">
+                    <span class="eyebrow">
+                        <span class="eyebrow-dot"></span>
+                        YOUR ONLINE LEARNING SPACE
+                    </span>
+
+                    <h1>Learning continues,<br><em>wherever you are.</em></h1>
+
+                    <p>
+                        Study materials for our online Quran classes.
+                        Open the books below to read directly on this website.
+                    </p>
                 </div>
-                <div class="hero-note"><span class="note-star" aria-hidden="true">✦</span> Small steps, sincere effort, lasting growth.</div>
+
+                <div class="classroom-seal" aria-hidden="true">
+                    <span>۞</span>
+                    <small>ILM</small>
+                </div>
+
             </div>
 
-            <div class="hero-art" aria-label="Islamic-inspired decorative artwork">
-                <div class="hero-art-glow"></div>
-                <div class="arch-frame">
-                    <div class="arch-inner">
-                        <span class="arch-rosette" aria-hidden="true">۞</span>
-                        <p class="hero-arabic" lang="ar" dir="rtl">وَقُل رَّبِّ زِدْنِي عِلْمًا</p>
-                        <span class="arch-divider"></span>
-                        <p class="arch-translation">“My Lord, increase me in knowledge.”</p>
-                        <span class="arch-reference">SURAH TA-HA · 20:114</span>
+
+            <!-- Book cards -->
+            <div class="book-grid">
+
+                <!-- Amma Para -->
+                <article class="book-card amma-card">
+
+                    <div class="book-art amma-art">
+                        <span class="book-art-decoration">عَمَّ</span>
+                        <span class="book-art-subtitle">PARA 30</span>
                     </div>
-                </div>
-                <span class="art-spark spark-one" aria-hidden="true">✧</span>
-                <span class="art-spark spark-two" aria-hidden="true">✦</span>
-                <span class="art-orbit orbit-one" aria-hidden="true"></span>
-                <span class="art-orbit orbit-two" aria-hidden="true"></span>
+
+                    <div class="book-card-content">
+
+                        <span class="book-kicker">QURAN READING</span>
+
+                        <h2>Amma Para</h2>
+
+                        <p class="book-arabic" lang="ar" dir="rtl">
+                            جُزْءُ عَمَّ
+                        </p>
+
+                        <p class="book-description">
+                            Complete Para 30, from Surah An-Naba to Surah An-Naas,
+                            in Indo-Pak script with colour-coded Tajweed guidance.
+                        </p>
+
+                        <div class="book-meta">
+                            <span>37 Surahs</span>
+                            <span>15-line Indo-Pak</span>
+                            <span>27 PDF pages</span>
+                        </div>
+
+                        <div class="book-actions">
+                            <button class="button button-primary open-book"
+                                    type="button"
+                                    data-book="amma">
+                                Read online <span>↗</span>
+                            </button>
+
+                            <a class="book-download"
+                               href="https://herquranacademy.com/assets/quran/para-30-her-quran-academy.pdf?v=90bb5082"
+                               target="_blank"
+                               rel="noopener noreferrer">
+                                Open PDF
+                            </a>
+                        </div>
+
+                        <p class="book-student-note">
+                            Recommended for Ibrahim's Amma Para lessons.
+                        </p>
+
+                    </div>
+                </article>
+
+
+                <!-- Noorani Qaida -->
+                <article class="book-card qaida-card">
+
+                    <div class="book-art qaida-art">
+                        <span class="book-art-decoration">نورانی</span>
+                        <span class="book-art-subtitle">QAIDA</span>
+                    </div>
+
+                    <div class="book-card-content">
+
+                        <span class="book-kicker">FOUNDATION OF QURAN READING</span>
+
+                        <h2>Noorani Qaida</h2>
+
+                        <p class="book-arabic" lang="ar" dir="rtl">
+                            نُورَانِي قَاعِدَہ
+                        </p>
+
+                        <p class="book-description">
+                            A complete beginner's reading guide with Arabic
+                            exercises and English instructions.
+                        </p>
+
+                        <div class="book-meta">
+                            <span>33 Pages</span>
+                            <span>English instructions</span>
+                            <span>Arabic practice</span>
+                        </div>
+
+                        <div class="book-actions">
+                            <button class="button button-primary open-book"
+                                    type="button"
+                                    data-book="qaida">
+                                Read online <span>↗</span>
+                            </button>
+
+                            <a class="book-download"
+                               href="https://taqwafoundation.com/wp-content/uploads/noorani-qaida.pdf"
+                               target="_blank"
+                               rel="noopener noreferrer">
+                                Open PDF
+                            </a>
+                        </div>
+
+                        <p class="book-student-note">
+                            Recommended for Mustafa's Noorani Qaida lessons.
+                        </p>
+
+                    </div>
+                </article>
+
             </div>
+
+
+            <!-- PDF reader panel -->
+            <section class="book-reader-panel" id="book-reader-panel" hidden>
+
+                <div class="reader-heading">
+
+                    <div>
+                        <span class="eyebrow">ONLINE BOOK READER</span>
+                        <h2 id="reader-title">Book title</h2>
+                        <p id="reader-description">
+                            Read your lesson below.
+                        </p>
+                    </div>
+
+                    <button class="reader-close"
+                            id="close-reader"
+                            type="button"
+                            aria-label="Close book reader">
+                        ×
+                    </button>
+
+                </div>
+
+                <div class="reader-toolbar">
+
+                    <span class="reader-status">
+                        <span class="reader-status-dot"></span>
+                        Online reading
+                    </span>
+
+                    <a id="reader-open-pdf"
+                       href="#"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        Open in new tab ↗
+                    </a>
+
+                </div>
+
+                <div class="pdf-frame-wrapper">
+                    <iframe
+                        id="book-frame"
+                        title="Online Quran learning book"
+                        loading="lazy"
+                        referrerpolicy="no-referrer">
+                    </iframe>
+                </div>
+
+                <p class="reader-fallback">
+                    Having trouble viewing the book? Use the
+                    <a id="reader-fallback-link"
+                       href="#"
+                       target="_blank"
+                       rel="noopener noreferrer">direct PDF link</a>
+                    to open it in your browser.
+                </p>
+
+            </section>
+
+
+            <div class="classroom-note">
+                <span class="note-icon">✦</span>
+                <p>
+                    <strong>A note for students:</strong>
+                    Read aloud during your online lesson so your teacher can
+                    listen and correct your pronunciation. A PDF cannot
+                    assess your recitation by itself.
+                </p>
+            </div>
+
         </section>
 
+
+        <!-- =========================================
+             WELCOME HERO
+             ========================================= -->
+
+        <section class="hero-section page-shell">
+
+            <div class="hero-copy">
+
+                <span class="eyebrow hero-eyebrow">
+                    A PLACE TO LEARN &amp; GROW
+                </span>
+
+                <h2>
+                    Every page is a step<br>
+                    towards <em>something beautiful.</em>
+                </h2>
+
+                <p>
+                    Follow each student's Quran journey, celebrate achievements,
+                    and keep learning with purpose and consistency.
+                </p>
+
+                <div class="hero-actions">
+
+                    <a href="#students" class="button button-gold">
+                        View student progress <span>↗</span>
+                    </a>
+
+                    <a href="#learning-library" class="hero-text-link">
+                        Explore video lessons ↓
+                    </a>
+
+                </div>
+
+                <div class="hero-note">
+                    <span>✦</span>
+                    Small steps, sincere effort, lasting growth.
+                </div>
+
+            </div>
+
+
+            <div class="hero-art">
+
+                <div class="hero-art-glow"></div>
+
+                <div class="hero-arch">
+
+                    <div class="hero-arch-inner">
+
+                        <span class="hero-ornament">۞</span>
+
+                        <p class="hero-arabic" lang="ar" dir="rtl">
+                            وَقُل رَّبِّ زِدْنِي عِلْمًا
+                        </p>
+
+                        <span class="hero-divider"></span>
+
+                        <p class="hero-translation">
+                            "My Lord, increase me in knowledge."
+                        </p>
+
+                        <small>SURAH TA-HA · 20:114</small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             STUDENT DASHBOARD
+             ========================================= -->
+
         <section class="students-section page-shell" id="students">
-            <div class="section-topline">
+
+            <div class="section-heading">
+
                 <div>
                     <span class="eyebrow">THE LEARNING CIRCLE</span>
                     <h2>Our students</h2>
-                    <p class="section-intro">Choose a name to explore the latest learning report.</p>
+                    <p>Choose a student to explore the latest progress report.</p>
                 </div>
-                <div class="student-count"><strong id="student-count">04</strong><span>STUDENTS</span></div>
+
+                <div class="student-count">
+                    <strong id="student-count">04</strong>
+                    <span>STUDENTS</span>
+                </div>
+
             </div>
-            <div class="student-grid" id="student-grid" aria-live="polite"></div>
+
+            <div class="student-grid" id="student-grid"></div>
+
         </section>
 
-        <section class="report-section page-shell" id="report-section" aria-hidden="true">
-            <button class="back-button" id="back-button" type="button"><span aria-hidden="true">←</span> Back to students</button>
 
-            <div class="report-hero">
+        <!-- =========================================
+             INDIVIDUAL REPORT
+             ========================================= -->
+
+        <section class="report-section page-shell"
+                 id="report-section"
+                 hidden
+                 aria-hidden="true">
+
+            <button class="back-button" id="back-button" type="button">
+                ← Back to students
+            </button>
+
+
+            <div class="report-header">
+
                 <div class="report-avatar" id="report-avatar">M</div>
+
                 <div class="report-heading-copy">
+
                     <span class="eyebrow">PERSONAL LEARNING REPORT</span>
+
                     <h2 id="report-name">Student name</h2>
-                    <p id="report-type">Quran student</p>
+
+                    <p id="report-type">Student category</p>
+
+                    <span class="completion-badge"
+                          id="completion-badge"
+                          hidden>
+                        ✦ QURAN COMPLETED
+                    </span>
+
                 </div>
+
                 <div class="report-level">
                     <span>CURRENT LEVEL</span>
-                    <strong id="report-level-value">30th Para</strong>
+                    <strong id="report-level">1st Para</strong>
                 </div>
+
             </div>
+
 
             <p class="report-description" id="report-description"></p>
 
+
             <div class="learning-grid">
+
                 <article class="learning-card">
-                    <span class="learning-card-icon" aria-hidden="true">۞</span>
+
+                    <span class="learning-icon">۞</span>
+
                     <span class="card-kicker">CURRENT PROGRESS</span>
+
                     <h3 id="current-learning">Current lesson</h3>
+
                     <p id="current-detail"></p>
+
                 </article>
-                <article class="learning-card learning-card-next">
-                    <span class="learning-card-icon" aria-hidden="true">✧</span>
+
+
+                <article class="learning-card next-learning-card">
+
+                    <span class="learning-icon">✧</span>
+
                     <span class="card-kicker">NEXT MILESTONE</span>
+
                     <h3 id="next-learning">Next step</h3>
+
                     <p id="next-detail"></p>
+
                 </article>
+
             </div>
 
+
+            <!-- Hifz section -->
             <section class="report-panel" id="hifz-section">
+
                 <div class="panel-heading">
+
                     <div>
                         <span class="eyebrow">MEMORIZATION JOURNEY</span>
                         <h3>Hifz &amp; Surah progress</h3>
                     </div>
-                    <span class="soft-pill" id="completion-count">0 completed</span>
+
+                    <span class="soft-pill" id="completion-count">
+                        0 completed
+                    </span>
+
                 </div>
-                <p class="panel-description">Surahs that have been memorized, alongside the current Hifz target.</p>
+
+                <p class="panel-description">
+                    Completed Surahs and the next memorization target.
+                </p>
+
                 <div class="surah-list" id="surah-list"></div>
+
             </section>
 
+
+            <!-- Junior weekly progress -->
             <section class="report-panel" id="weekly-section" hidden>
+
                 <div class="panel-heading">
+
                     <div>
                         <span class="eyebrow">WEEK BY WEEK</span>
                         <h3>Weekly learning review</h3>
                     </div>
+
                     <span class="soft-pill">WEEKLY REPORT</span>
+
                 </div>
+
                 <div class="weekly-summary">
-                    <div class="weekly-score" id="weekly-score" aria-label="Weekly star rating">★★★★☆</div>
+
+                    <div class="weekly-score" id="weekly-score"></div>
+
                     <div>
-                        <strong><span id="weekly-stars-number">4</span>/5 <span class="summary-stars-label">STARS</span></strong>
-                        <p id="weekly-rating">Very good progress</p>
+                        <strong>
+                            <span id="weekly-stars-number">4</span>/5 STARS
+                        </strong>
+
+                        <p id="weekly-rating">Very good</p>
                     </div>
+
                 </div>
-                <div class="progress-track"><div class="progress-fill" id="weekly-progress-fill"></div></div>
+
+                <div class="progress-track">
+                    <div class="progress-fill" id="weekly-progress-fill"></div>
+                </div>
+
                 <div class="comment-box">
+
                     <span class="card-kicker">TEACHER'S WEEKLY NOTE</span>
+
                     <p id="weekly-comment"></p>
+
                 </div>
-                <div class="history-heading">Previous weekly reviews</div>
+
+                <h4 class="history-heading">Previous weekly reviews</h4>
+
                 <div class="weekly-history-list" id="weekly-history-list"></div>
+
             </section>
 
+
+            <!-- Teacher review -->
             <section class="report-panel feedback-panel">
+
                 <div class="panel-heading">
+
                     <div>
                         <span class="eyebrow">A NOTE FROM THE TEACHER</span>
                         <h3>Progress &amp; encouragement</h3>
                     </div>
+
                     <span class="soft-pill">PERSONAL FEEDBACK</span>
+
                 </div>
-                <div class="review-stars" id="rating-stars" aria-label="Teacher rating"></div>
+
+                <div class="review-stars" id="rating-stars"></div>
+
                 <p class="teacher-review" id="teacher-review"></p>
-                <p class="updated-note">LAST UPDATED <strong id="last-updated"></strong></p>
+
+                <p class="updated-note">
+                    LAST UPDATED:
+                    <strong id="last-updated"></strong>
+                </p>
+
             </section>
+
         </section>
 
+
+        <!-- =========================================
+             SHARED YOUTUBE LIBRARY
+             ========================================= -->
+
         <section class="library-section page-shell" id="learning-library">
-            <div class="section-topline library-heading">
+
+            <div class="section-heading">
+
                 <div>
                     <span class="eyebrow">LISTEN · WATCH · REFLECT</span>
                     <h2>The learning library</h2>
-                    <p class="section-intro">A shared collection of recitations, stories, and lessons selected for our students.</p>
+                    <p>
+                        A shared collection of recitations, stories, and
+                        lessons selected for our students.
+                    </p>
                 </div>
-                <div class="library-emblem" aria-hidden="true">▶</div>
+
+                <div class="library-emblem">▶</div>
+
             </div>
 
+
             <div class="featured-video" id="featured-video">
+
                 <div class="featured-placeholder" id="featured-placeholder">
-                    <div class="featured-play" aria-hidden="true">▶</div>
+
+                    <span class="featured-play">▶</span>
+
                     <div>
                         <span class="eyebrow">SELECTED FOR LEARNING</span>
                         <h3 id="featured-title">A lesson is waiting for you</h3>
-                        <p id="featured-description">Choose any video below to watch it here.</p>
+                        <p id="featured-description">
+                            Choose any video below to watch it here.
+                        </p>
                     </div>
-                    <span class="featured-decoration" aria-hidden="true">۞</span>
+
+                    <span class="featured-decoration">۞</span>
+
                 </div>
+
                 <div class="video-player" id="video-player" hidden></div>
+
             </div>
+
 
             <div class="library-tools">
+
                 <label class="search-box">
-                    <span aria-hidden="true">⌕</span>
-                    <input id="video-search" type="search" placeholder="Search the library..." aria-label="Search videos">
+                    <span>⌕</span>
+
+                    <input
+                        type="search"
+                        id="video-search"
+                        placeholder="Search the library..."
+                        aria-label="Search videos">
                 </label>
-                <div class="category-filters" id="category-filters" aria-label="Filter videos by category"></div>
+
+                <div class="category-filters"
+                     id="category-filters"
+                     aria-label="Video categories">
+                </div>
+
             </div>
 
+
             <div class="video-grid" id="video-grid"></div>
-            <p class="empty-message" id="empty-videos" hidden>No lessons found. Try a different search or category.</p>
-            <p class="library-footnote">All videos are provided through YouTube. Playback availability depends on each video's embedding settings.</p>
+
+            <p class="empty-message" id="empty-videos" hidden>
+                No lessons found. Try another search or category.
+            </p>
+
+            <p class="library-footnote">
+                Videos are played through YouTube. Availability depends on
+                the video's individual embedding settings.
+            </p>
+
         </section>
+
     </main>
 
+
+    <!-- Footer -->
     <footer class="site-footer">
-        <div class="footer-ornament" aria-hidden="true">۞</div>
-        <p class="footer-arabic" lang="ar" dir="rtl">رَبِّ زِدْنِي عِلْمًا</p>
+
+        <span class="footer-ornament">۞</span>
+
+        <p class="footer-arabic" lang="ar" dir="rtl">
+            رَبِّ زِدْنِي عِلْمًا
+        </p>
+
         <strong>Quran Learning</strong>
-        <p class="footer-message">May every lesson bring understanding, kindness, and barakah.</p>
+
+        <p>
+            May every lesson bring understanding, kindness, and barakah.
+        </p>
+
         <small>STUDENT PROGRESS &amp; ISLAMIC LEARNING</small>
+
     </footer>
+
 </body>
 </html>
